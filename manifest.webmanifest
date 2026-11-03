@@ -1,0 +1,16 @@
+{
+  "name": "海期平倉計算機",
+  "short_name": "平倉計算機",
+  "description": "依元大期貨國外期貨代沖銷規則，試算再虧幾點會被追繳或平倉。",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4F1EC",
+  "theme_color": "#3A4250",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

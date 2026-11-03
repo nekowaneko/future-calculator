@@ -1,0 +1,1924 @@
+{
+ "updated": "2026/11/03 16:31",
+ "source": "https://www.yuantafutures.com.tw/margin_02",
+ "count": 213,
+ "products": [
+  {
+   "group": "芝商所 CME",
+   "code": "YM",
+   "name": "小道瓊指數",
+   "curr": "USD",
+   "tick": 5,
+   "im": 16823,
+   "mm": 15293
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "ES",
+   "name": "小SP指數",
+   "curr": "USD",
+   "tick": 50,
+   "im": 28559,
+   "mm": 25962
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "NQ",
+   "name": "小那斯達克",
+   "curr": "USD",
+   "tick": 20,
+   "im": 45744,
+   "mm": 41585
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "NK",
+   "name": "美元日經",
+   "curr": "USD",
+   "tick": 5,
+   "im": 26019,
+   "mm": 23653
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "US",
+   "name": "美國三十年債",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 4070,
+   "mm": 3700
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "TY",
+   "name": "美國十年債",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 2063,
+   "mm": 1875
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "FV",
+   "name": "美國五年債",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 1375,
+   "mm": 1250
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "TU",
+   "name": "美國二年債",
+   "curr": "USD",
+   "tick": 2000,
+   "im": 1320,
+   "mm": 1200
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "UB",
+   "name": "美國超長債",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 5665,
+   "mm": 5150
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "ED",
+   "name": "歐洲美元",
+   "curr": "USD",
+   "tick": 2500,
+   "im": 1188,
+   "mm": 1080
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "S",
+   "name": "黃豆",
+   "curr": "USD",
+   "tick": 50,
+   "im": 2530,
+   "mm": 2300
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "BO",
+   "name": "黃豆油",
+   "curr": "USD",
+   "tick": 600,
+   "im": 2310,
+   "mm": 2100
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SM",
+   "name": "黃豆粉",
+   "curr": "USD",
+   "tick": 100,
+   "im": 1705,
+   "mm": 1550
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "YK",
+   "name": "小黃豆",
+   "curr": "USD",
+   "tick": 10,
+   "im": 506,
+   "mm": 460
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "YC",
+   "name": "小玉米",
+   "curr": "USD",
+   "tick": 10,
+   "im": 242,
+   "mm": 220
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "C",
+   "name": "玉米",
+   "curr": "USD",
+   "tick": 50,
+   "im": 1210,
+   "mm": 1100
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "O",
+   "name": "燕麥",
+   "curr": "USD",
+   "tick": 50,
+   "im": 1375,
+   "mm": 1250
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "W",
+   "name": "小麥",
+   "curr": "USD",
+   "tick": 50,
+   "im": 2255,
+   "mm": 2050
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "RR",
+   "name": "粗米",
+   "curr": "USD",
+   "tick": 2000,
+   "im": 1375,
+   "mm": 1250
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "AD",
+   "name": "澳幣",
+   "curr": "USD",
+   "tick": 10,
+   "im": 1925,
+   "mm": 1750
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "BP",
+   "name": "英鎊",
+   "curr": "USD",
+   "tick": 6.25,
+   "im": 1870,
+   "mm": 1700
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "CD",
+   "name": "加幣",
+   "curr": "USD",
+   "tick": 10,
+   "im": 880,
+   "mm": 800
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SF",
+   "name": "瑞朗",
+   "curr": "USD",
+   "tick": 12.5,
+   "im": 3960,
+   "mm": 3600
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "EC",
+   "name": "歐元",
+   "curr": "USD",
+   "tick": 12.5,
+   "im": 2310,
+   "mm": 2100
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "ECM",
+   "name": "微歐元",
+   "curr": "USD",
+   "tick": 1.25,
+   "im": 231,
+   "mm": 210
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "E7",
+   "name": "小歐元",
+   "curr": "USD",
+   "tick": 6.25,
+   "im": 1155,
+   "mm": 1050
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "JY",
+   "name": "日元",
+   "curr": "USD",
+   "tick": 12.5,
+   "im": 3080,
+   "mm": 2800
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "RY",
+   "name": "歐元兌日元",
+   "curr": "JPY",
+   "tick": 125000,
+   "im": 742500,
+   "mm": 675000
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "UE",
+   "name": "歐元兌英鎊",
+   "curr": "GBP",
+   "tick": 1.25,
+   "im": 1650,
+   "mm": 1500
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "NE",
+   "name": "紐幣",
+   "curr": "USD",
+   "tick": 10,
+   "im": 1320,
+   "mm": 1200
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MP",
+   "name": "墨西哥披索",
+   "curr": "USD",
+   "tick": 0.5,
+   "im": 1210,
+   "mm": 1100
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "PL",
+   "name": "白金",
+   "curr": "USD",
+   "tick": 50,
+   "im": 7040,
+   "mm": 6400
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "PA",
+   "name": "鈀金",
+   "curr": "USD",
+   "tick": 100,
+   "im": 9589,
+   "mm": 8717
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "CL",
+   "name": "輕原油",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 11410,
+   "mm": 10372
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "QM",
+   "name": "小輕原油",
+   "curr": "USD",
+   "tick": 500,
+   "im": 5716,
+   "mm": 5196
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "HO",
+   "name": "熱燃油",
+   "curr": "USD",
+   "tick": 42000,
+   "im": 15812,
+   "mm": 14374
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "NG",
+   "name": "天然氣",
+   "curr": "USD",
+   "tick": 10000,
+   "im": 3276,
+   "mm": 2978
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "QG",
+   "name": "小天然氣",
+   "curr": "USD",
+   "tick": 2500,
+   "im": 827,
+   "mm": 751
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "LC",
+   "name": "活牛",
+   "curr": "USD",
+   "tick": 400,
+   "im": 3300,
+   "mm": 3000
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "RB",
+   "name": "無鉛汽油",
+   "curr": "USD",
+   "tick": 42000,
+   "im": 10400,
+   "mm": 9454
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "FC",
+   "name": "肉牛",
+   "curr": "USD",
+   "tick": 500,
+   "im": 5940,
+   "mm": 5400
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "LH",
+   "name": "瘦肉豬",
+   "curr": "USD",
+   "tick": 400,
+   "im": 1650,
+   "mm": 1500
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "BZ",
+   "name": "CME布侖特",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 13581,
+   "mm": 12346
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "GC",
+   "name": "黃金",
+   "curr": "USD",
+   "tick": 100,
+   "im": 21833,
+   "mm": 19848
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MGC",
+   "name": "微黃金",
+   "curr": "USD",
+   "tick": 10,
+   "im": 2184,
+   "mm": 1985
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SI",
+   "name": "白銀",
+   "curr": "USD",
+   "tick": 5000,
+   "im": 24630,
+   "mm": 22391
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "HG",
+   "name": "銅",
+   "curr": "USD",
+   "tick": 25000,
+   "im": 11000,
+   "mm": 10000
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "ALI",
+   "name": "鋁",
+   "curr": "USD",
+   "tick": 25,
+   "im": 5500,
+   "mm": 5000
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "10Y",
+   "name": "微10年殖利率",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 330,
+   "mm": 300
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "1OZ",
+   "name": "一盎司黃金",
+   "curr": "USD",
+   "tick": 1,
+   "im": 219,
+   "mm": 199
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "BIO",
+   "name": "小NQ生技",
+   "curr": "USD",
+   "tick": 25,
+   "im": 13567,
+   "mm": 12333
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "BR",
+   "name": "巴西幣",
+   "curr": "USD",
+   "tick": 10,
+   "im": 1265,
+   "mm": 1150
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "ESG",
+   "name": "小SP ESG指數",
+   "curr": "USD",
+   "tick": 500,
+   "im": 20452,
+   "mm": 18592
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "M2K",
+   "name": "微羅素2000",
+   "curr": "USD",
+   "tick": 5,
+   "im": 1198,
+   "mm": 1089
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "M6A",
+   "name": "微澳幣",
+   "curr": "USD",
+   "tick": 1,
+   "im": 193,
+   "mm": 175
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "M6B",
+   "name": "微英鎊",
+   "curr": "USD",
+   "tick": 0.63,
+   "im": 187,
+   "mm": 170
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MCD",
+   "name": "微加幣",
+   "curr": "USD",
+   "tick": 1,
+   "im": 88,
+   "mm": 80
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MCL",
+   "name": "微輕原油",
+   "curr": "USD",
+   "tick": 100,
+   "im": 1143,
+   "mm": 1039
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "ME",
+   "name": "小標普400",
+   "curr": "USD",
+   "tick": 100,
+   "im": 27671,
+   "mm": 25155
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MES",
+   "name": "微SP指數",
+   "curr": "USD",
+   "tick": 5,
+   "im": 2856,
+   "mm": 2596
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MHG",
+   "name": "微銅",
+   "curr": "USD",
+   "tick": 2500,
+   "im": 1100,
+   "mm": 1000
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MNG",
+   "name": "微天然氣",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 332,
+   "mm": 301
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MNIK",
+   "name": "微型日元日經",
+   "curr": "JPY",
+   "tick": 50,
+   "im": 264593,
+   "mm": 240539
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MNK",
+   "name": "微美元日經",
+   "curr": "USD",
+   "tick": 0.5,
+   "im": 2602,
+   "mm": 2365
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MNQ",
+   "name": "微那斯達克",
+   "curr": "USD",
+   "tick": 2,
+   "im": 4575,
+   "mm": 4159
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MYM",
+   "name": "微道瓊指數",
+   "curr": "USD",
+   "tick": 0.5,
+   "im": 1682,
+   "mm": 1529
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MZC",
+   "name": "微玉米",
+   "curr": "USD",
+   "tick": 5,
+   "im": 121,
+   "mm": 110
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "MZS",
+   "name": "微黃豆",
+   "curr": "USD",
+   "tick": 5,
+   "im": 253,
+   "mm": 230
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "NY",
+   "name": "日元日經",
+   "curr": "JPY",
+   "tick": 500,
+   "im": 2645925,
+   "mm": 2405386
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "QI",
+   "name": "小白銀",
+   "curr": "USD",
+   "tick": 2500,
+   "im": 12315,
+   "mm": 11196
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "QO",
+   "name": "小黃金",
+   "curr": "USD",
+   "tick": 50,
+   "im": 10917,
+   "mm": 9924
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "RA",
+   "name": "南非幣",
+   "curr": "USD",
+   "tick": 0.5,
+   "im": 1760,
+   "mm": 1600
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "RE",
+   "name": "道瓊房地產",
+   "curr": "USD",
+   "tick": 100,
+   "im": 2712,
+   "mm": 2465
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "RTY",
+   "name": "小羅素2000",
+   "curr": "USD",
+   "tick": 50,
+   "im": 11984,
+   "mm": 10894
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "RU",
+   "name": "俄羅斯盧布",
+   "curr": "USD",
+   "tick": 2.5,
+   "im": 6820,
+   "mm": 6200
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SDA",
+   "name": "SP500年股息",
+   "curr": "USD",
+   "tick": 250,
+   "im": 425,
+   "mm": 386
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SDI",
+   "name": "SP500季股息",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 649,
+   "mm": 590
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SIC",
+   "name": "100盎司白銀",
+   "curr": "USD",
+   "tick": 100,
+   "im": 493,
+   "mm": 448
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SIL",
+   "name": "微白銀",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 4926,
+   "mm": 4479
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SIR",
+   "name": "盧比",
+   "curr": "USD",
+   "tick": 500,
+   "im": 1100,
+   "mm": 1000
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SR1",
+   "name": "一個月SOFR",
+   "curr": "USD",
+   "tick": 4167,
+   "im": 1348,
+   "mm": 1225
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "SR3",
+   "name": "三個月SOFR",
+   "curr": "USD",
+   "tick": 2500,
+   "im": 908,
+   "mm": 825
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "UN",
+   "name": "美國長期十年債",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 2805,
+   "mm": 2550
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "XAE",
+   "name": "小能源指數",
+   "curr": "USD",
+   "tick": 100,
+   "im": 11096,
+   "mm": 10087
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "XAI",
+   "name": "小工業指數",
+   "curr": "USD",
+   "tick": 100,
+   "im": 9154,
+   "mm": 8321
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "XAP",
+   "name": "小消費必需品",
+   "curr": "USD",
+   "tick": 100,
+   "im": 4789,
+   "mm": 4353
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "XAU",
+   "name": "小公共事業",
+   "curr": "USD",
+   "tick": 100,
+   "im": 6824,
+   "mm": 6203
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "XAV",
+   "name": "小SP衛保",
+   "curr": "USD",
+   "tick": 100,
+   "im": 11021,
+   "mm": 10019
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "YW",
+   "name": "小小麥",
+   "curr": "USD",
+   "tick": 10,
+   "im": 451,
+   "mm": 410
+  },
+  {
+   "group": "芝商所 CME",
+   "code": "ZQ",
+   "name": "30天聯邦基金",
+   "curr": "USD",
+   "tick": 4167,
+   "im": 677,
+   "mm": 615
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "STWN",
+   "name": "富時台灣",
+   "curr": "USD",
+   "tick": 40,
+   "im": 12980,
+   "mm": 11800
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SSI",
+   "name": "星日經",
+   "curr": "JPY",
+   "tick": 500,
+   "im": 2640000,
+   "mm": 2400000
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SNS",
+   "name": "微星日經",
+   "curr": "JPY",
+   "tick": 10,
+   "im": 52800,
+   "mm": 48000
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SSG",
+   "name": "新加坡指數",
+   "curr": "SGD",
+   "tick": 100,
+   "im": 2552,
+   "mm": 2320
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SCN",
+   "name": "A50指數",
+   "curr": "USD",
+   "tick": 1,
+   "im": 847,
+   "mm": 770
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SJB",
+   "name": "十年小日債",
+   "curr": "JPY",
+   "tick": 100000,
+   "im": 154000,
+   "mm": 140000
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "FEF",
+   "name": "鐵礦石",
+   "curr": "USD",
+   "tick": 100,
+   "im": 839,
+   "mm": 762
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SFCH",
+   "name": "H50指數",
+   "curr": "USD",
+   "tick": 2,
+   "im": 1980,
+   "mm": 1800
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SFID",
+   "name": "富時印尼",
+   "curr": "USD",
+   "tick": 5,
+   "im": 770,
+   "mm": 700
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SFVN",
+   "name": "富時越南",
+   "curr": "USD",
+   "tick": 5,
+   "im": 1045,
+   "mm": 950
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SIU",
+   "name": "盧比兌美元",
+   "curr": "USD",
+   "tick": 200,
+   "im": 352,
+   "mm": 320
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "SMTW",
+   "name": "微富時台灣",
+   "curr": "USD",
+   "tick": 4,
+   "im": 1298,
+   "mm": 1180
+  },
+  {
+   "group": "新加坡交易所 SGX",
+   "code": "STF",
+   "name": "20號橡膠",
+   "curr": "USD",
+   "tick": 50,
+   "im": 990,
+   "mm": 900
+  },
+  {
+   "group": "東京商品交易所 TOCOM",
+   "code": "JGL",
+   "name": "東京汽油",
+   "curr": "JPY",
+   "tick": 50,
+   "im": 474500,
+   "mm": 474500
+  },
+  {
+   "group": "東京商品交易所 TOCOM",
+   "code": "JKE",
+   "name": "東京燃油",
+   "curr": "JPY",
+   "tick": 50,
+   "im": 850200,
+   "mm": 850200
+  },
+  {
+   "group": "東京商品交易所 TOCOM",
+   "code": "JCO",
+   "name": "東京原油",
+   "curr": "JPY",
+   "tick": 50,
+   "im": 780650,
+   "mm": 780650
+  },
+  {
+   "group": "東京商品交易所 TOCOM",
+   "code": "JCA",
+   "name": "中京汽油",
+   "curr": "JPY",
+   "tick": 10,
+   "im": 99710,
+   "mm": 99710
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JNI",
+   "name": "大阪日經",
+   "curr": "JPY",
+   "tick": 1000,
+   "im": 5532435,
+   "mm": 5532435
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JNM",
+   "name": "大阪小日經",
+   "curr": "JPY",
+   "tick": 100,
+   "im": 552318,
+   "mm": 552318
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JNU",
+   "name": "大阪微日經",
+   "curr": "JPY",
+   "tick": 10,
+   "im": 55232,
+   "mm": 55232
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JTI",
+   "name": "東證指數",
+   "curr": "JPY",
+   "tick": 10000,
+   "im": 2741361,
+   "mm": 2741361
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JMT",
+   "name": "小東證指數",
+   "curr": "JPY",
+   "tick": 1000,
+   "im": 274137,
+   "mm": 274137
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JNK",
+   "name": "日經400指數",
+   "curr": "JPY",
+   "tick": 100,
+   "im": 243533,
+   "mm": 243533
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JMI",
+   "name": "東證創業指數",
+   "curr": "JPY",
+   "tick": 1000,
+   "im": 83234,
+   "mm": 83234
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JGB",
+   "name": "日本十年債",
+   "curr": "JPY",
+   "tick": 1000000,
+   "im": 1525560,
+   "mm": 1525560
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JPA",
+   "name": "東京鈀金",
+   "curr": "JPY",
+   "tick": 3000,
+   "im": 1719900,
+   "mm": 1719900
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JSV",
+   "name": "東京白銀",
+   "curr": "JPY",
+   "tick": 30000,
+   "im": 1076400,
+   "mm": 1076400
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JPL",
+   "name": "東京白金",
+   "curr": "JPY",
+   "tick": 500,
+   "im": 486200,
+   "mm": 486200
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JPM",
+   "name": "東京小白金",
+   "curr": "JPY",
+   "tick": 100,
+   "im": 97240,
+   "mm": 97240
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JAU",
+   "name": "東京黃金",
+   "curr": "JPY",
+   "tick": 1000,
+   "im": 1723800,
+   "mm": 1723800
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JAM",
+   "name": "東京小黃金",
+   "curr": "JPY",
+   "tick": 100,
+   "im": 172380,
+   "mm": 172380
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JCR",
+   "name": "東京玉米",
+   "curr": "JPY",
+   "tick": 50,
+   "im": 101400,
+   "mm": 101400
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JAS",
+   "name": "東京黃豆",
+   "curr": "JPY",
+   "tick": 25,
+   "im": 145600,
+   "mm": 145600
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JRB",
+   "name": "東京紅豆",
+   "curr": "JPY",
+   "tick": 80,
+   "im": 52000,
+   "mm": 52000
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JRU",
+   "name": "東京橡膠",
+   "curr": "JPY",
+   "tick": 5000,
+   "im": 106600,
+   "mm": 106600
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JBS",
+   "name": "日本小20年債",
+   "curr": "JPY",
+   "tick": 1000000,
+   "im": 287953,
+   "mm": 287953
+  },
+  {
+   "group": "日本交易所 JPX",
+   "code": "JRT",
+   "name": "東證REIT指數",
+   "curr": "JPY",
+   "tick": 1000,
+   "im": 97987,
+   "mm": 97987
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "10KTB",
+   "name": "韓國十年債",
+   "curr": "KRW",
+   "tick": 1000000,
+   "im": 3277854,
+   "mm": 2185236
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "3KTB",
+   "name": "韓國三年債",
+   "curr": "KRW",
+   "tick": 1000000,
+   "im": 992832,
+   "mm": 661888
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "HAS",
+   "name": "韓華航太",
+   "curr": "KRW",
+   "tick": 10,
+   "im": 2586300,
+   "mm": 1724200
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "HMC",
+   "name": "現代汽車",
+   "curr": "KRW",
+   "tick": 10,
+   "im": 736763,
+   "mm": 491175
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "KIA",
+   "name": "KIA",
+   "curr": "KRW",
+   "tick": 10,
+   "im": 215901,
+   "mm": 143934
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "KQ",
+   "name": "KQ150指數",
+   "curr": "KRW",
+   "tick": 10000,
+   "im": 2453388,
+   "mm": 1635592
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "KS",
+   "name": "KS200指數",
+   "curr": "KRW",
+   "tick": 250000,
+   "im": 46497675,
+   "mm": 30998450
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "KWUSD",
+   "name": "美元兌韓圜",
+   "curr": "KRW",
+   "tick": 10000,
+   "im": 609485,
+   "mm": 406323
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "LGES",
+   "name": "LG新能源",
+   "curr": "KRW",
+   "tick": 10,
+   "im": 877110,
+   "mm": 584740
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "MKS",
+   "name": "小KS200指數",
+   "curr": "KRW",
+   "tick": 50000,
+   "im": 9299535,
+   "mm": 6199690
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "MRASE",
+   "name": "未來資產證券",
+   "curr": "KRW",
+   "tick": 10,
+   "im": 73781,
+   "mm": 49187
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "NAVER",
+   "name": "Naver",
+   "curr": "KRW",
+   "tick": 10,
+   "im": 392925,
+   "mm": 261950
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "SEC",
+   "name": "三星電子",
+   "curr": "KRW",
+   "tick": 10,
+   "im": 829710,
+   "mm": 553140
+  },
+  {
+   "group": "韓國交易所 KRX",
+   "code": "SKH",
+   "name": "SK海力士",
+   "curr": "KRW",
+   "tick": 10,
+   "im": 6311970,
+   "mm": 4207980
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "HSI",
+   "name": "恒生指數",
+   "curr": "HKD",
+   "tick": 50,
+   "im": 92940,
+   "mm": 77450
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "MHI",
+   "name": "小恒生指數",
+   "curr": "HKD",
+   "tick": 10,
+   "im": 18588,
+   "mm": 15490
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "HHI",
+   "name": "H股指數",
+   "curr": "HKD",
+   "tick": 50,
+   "im": 35880,
+   "mm": 29900
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "MCH",
+   "name": "小H股指數",
+   "curr": "HKD",
+   "tick": 10,
+   "im": 7176,
+   "mm": 5980
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "MXJ",
+   "name": "亞洲除日本指數",
+   "curr": "USD",
+   "tick": 100,
+   "im": 5592,
+   "mm": 4660
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "GDU",
+   "name": "美元黃金",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 8268,
+   "mm": 6890
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "HKB",
+   "name": "匯豐控股",
+   "curr": "HKD",
+   "tick": 400,
+   "im": 4704,
+   "mm": 3920
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "HMCA",
+   "name": "中國A50指數",
+   "curr": "USD",
+   "tick": 25,
+   "im": 5364,
+   "mm": 4470
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "HMND",
+   "name": "印度指數",
+   "curr": "USD",
+   "tick": 20,
+   "im": 2340,
+   "mm": 1950
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "HMTW",
+   "name": "台灣指數",
+   "curr": "USD",
+   "tick": 100,
+   "im": 15840,
+   "mm": 13200
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "HTI",
+   "name": "恆生科技",
+   "curr": "HKD",
+   "tick": 50,
+   "im": 25104,
+   "mm": 20920
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "PAI",
+   "name": "中國平安",
+   "curr": "HKD",
+   "tick": 500,
+   "im": 1812,
+   "mm": 1510
+  },
+  {
+   "group": "香港交易所 HKEx",
+   "code": "TCH",
+   "name": "騰訊控股",
+   "curr": "HKD",
+   "tick": 100,
+   "im": 3588,
+   "mm": 2990
+  },
+  {
+   "group": "洲際交易所 ICE 美國",
+   "code": "KC",
+   "name": "咖啡",
+   "curr": "USD",
+   "tick": 375,
+   "im": 16653,
+   "mm": 15139
+  },
+  {
+   "group": "洲際交易所 ICE 美國",
+   "code": "SB",
+   "name": "11號糖",
+   "curr": "USD",
+   "tick": 1120,
+   "im": 1343,
+   "mm": 1221
+  },
+  {
+   "group": "洲際交易所 ICE 美國",
+   "code": "CC",
+   "name": "可可",
+   "curr": "USD",
+   "tick": 10,
+   "im": 7095,
+   "mm": 6450
+  },
+  {
+   "group": "洲際交易所 ICE 美國",
+   "code": "CT",
+   "name": "棉花",
+   "curr": "USD",
+   "tick": 500,
+   "im": 2167,
+   "mm": 1970
+  },
+  {
+   "group": "洲際交易所 ICE 美國",
+   "code": "OJ",
+   "name": "凍橘汁",
+   "curr": "USD",
+   "tick": 150,
+   "im": 2639,
+   "mm": 2399
+  },
+  {
+   "group": "洲際交易所 ICE 美國",
+   "code": "DX",
+   "name": "美元指數",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 2172,
+   "mm": 1974
+  },
+  {
+   "group": "洲際交易所 ICE 美國",
+   "code": "MFNG",
+   "name": "FANG指數",
+   "curr": "USD",
+   "tick": 5,
+   "im": 4245,
+   "mm": 3859
+  },
+  {
+   "group": "洲際交易所 ICE 美國",
+   "code": "MME",
+   "name": "小新興市場",
+   "curr": "USD",
+   "tick": 50,
+   "im": 4174,
+   "mm": 3794
+  },
+  {
+   "group": "洲際交易所 ICE 歐洲",
+   "code": "LCO",
+   "name": "布侖特",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 8238,
+   "mm": 7490
+  },
+  {
+   "group": "洲際交易所 ICE 英國",
+   "code": "FFI",
+   "name": "富時100指數",
+   "curr": "GBP",
+   "tick": 10,
+   "im": 5722,
+   "mm": 5201
+  },
+  {
+   "group": "洲際交易所 ICE 英國",
+   "code": "FLG",
+   "name": "英國長債",
+   "curr": "GBP",
+   "tick": 1000,
+   "im": 1956,
+   "mm": 1779
+  },
+  {
+   "group": "洲際交易所 ICE 英國",
+   "code": "FEI",
+   "name": "3M歐元利率",
+   "curr": "EUR",
+   "tick": 2500,
+   "im": 313,
+   "mm": 285
+  },
+  {
+   "group": "洲際交易所 ICE 英國",
+   "code": "FSS",
+   "name": "3M英鎊利率",
+   "curr": "GBP",
+   "tick": 1250,
+   "im": 368,
+   "mm": 334
+  },
+  {
+   "group": "洲際交易所 ICE 英國",
+   "code": "LKD",
+   "name": "倫敦咖啡",
+   "curr": "USD",
+   "tick": 10,
+   "im": 3759,
+   "mm": 3416
+  },
+  {
+   "group": "洲際交易所 ICE 英國",
+   "code": "LCC",
+   "name": "倫敦可可",
+   "curr": "GBP",
+   "tick": 10,
+   "im": 7816,
+   "mm": 7105
+  },
+  {
+   "group": "洲際交易所 ICE 英國",
+   "code": "LSU",
+   "name": "倫敦白糖",
+   "curr": "USD",
+   "tick": 50,
+   "im": 2054,
+   "mm": 1867
+  },
+  {
+   "group": "洲際交易所 ICE 英國",
+   "code": "SO3",
+   "name": "3M SONIA英鎊",
+   "curr": "GBP",
+   "tick": 2500,
+   "im": 107,
+   "mm": 98
+  },
+  {
+   "group": "洲際交易所 ICE 新加坡",
+   "code": "MBC",
+   "name": "小布侖特",
+   "curr": "USD",
+   "tick": 100,
+   "im": 1087,
+   "mm": 988
+  },
+  {
+   "group": "洲際交易所 ICE 新加坡",
+   "code": "MWC",
+   "name": "小西德州",
+   "curr": "USD",
+   "tick": 100,
+   "im": 1281,
+   "mm": 1164
+  },
+  {
+   "group": "洲際交易所 ICE 新加坡",
+   "code": "SDX",
+   "name": "小美元指數",
+   "curr": "USD",
+   "tick": 200,
+   "im": 438,
+   "mm": 398
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "DAX",
+   "name": "DAX指數",
+   "curr": "EUR",
+   "tick": 25,
+   "im": 47850,
+   "mm": 47850
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "DXM",
+   "name": "小DAX指數",
+   "curr": "EUR",
+   "tick": 5,
+   "im": 9570,
+   "mm": 9570
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FDXS",
+   "name": "微DAX指數",
+   "curr": "EUR",
+   "tick": 1,
+   "im": 1915,
+   "mm": 1915
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FESB",
+   "name": "歐盟銀行指數",
+   "curr": "EUR",
+   "tick": 50,
+   "im": 1570,
+   "mm": 1570
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FESX",
+   "name": "藍籌50指數",
+   "curr": "EUR",
+   "tick": 10,
+   "im": 4356,
+   "mm": 4356
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FSXE",
+   "name": "微藍籌50",
+   "curr": "EUR",
+   "tick": 1,
+   "im": 436,
+   "mm": 436
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FGBX",
+   "name": "歐元三十年債",
+   "curr": "EUR",
+   "tick": 1000,
+   "im": 4061,
+   "mm": 4061
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FGBL",
+   "name": "歐元十年債",
+   "curr": "EUR",
+   "tick": 1000,
+   "im": 2377,
+   "mm": 2377
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FGBM",
+   "name": "歐元五年債",
+   "curr": "EUR",
+   "tick": 1000,
+   "im": 1280,
+   "mm": 1280
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FGBS",
+   "name": "歐元二年債",
+   "curr": "EUR",
+   "tick": 1000,
+   "im": 454,
+   "mm": 454
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FBTP",
+   "name": "義大利長債",
+   "curr": "EUR",
+   "tick": 1000,
+   "im": 3326,
+   "mm": 3326
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FBTS",
+   "name": "義大利短債",
+   "curr": "EUR",
+   "tick": 1000,
+   "im": 1149,
+   "mm": 1149
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FEHY",
+   "name": "FEHY指數",
+   "curr": "EUR",
+   "tick": 200,
+   "im": 1193,
+   "mm": 1193
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FMCH",
+   "name": "歐洲中國指數",
+   "curr": "USD",
+   "tick": 50,
+   "im": 2475,
+   "mm": 2475
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FMWO",
+   "name": "美元世界指數",
+   "curr": "USD",
+   "tick": 10,
+   "im": 11795,
+   "mm": 11795
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FOAT",
+   "name": "法國十年債",
+   "curr": "EUR",
+   "tick": 1000,
+   "im": 2108,
+   "mm": 2108
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FSEG",
+   "name": "歐洲ESG指數",
+   "curr": "EUR",
+   "tick": 100,
+   "im": 1541,
+   "mm": 1541
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FSTB",
+   "name": "歐洲600銀行",
+   "curr": "EUR",
+   "tick": 50,
+   "im": 2093,
+   "mm": 2093
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FUEM",
+   "name": "彭博興主債指",
+   "curr": "USD",
+   "tick": 200,
+   "im": 582,
+   "mm": 582
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FUHY",
+   "name": "FUHY指數",
+   "curr": "USD",
+   "tick": 100,
+   "im": 2260,
+   "mm": 2260
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FUIG",
+   "name": "FUIG指數",
+   "curr": "USD",
+   "tick": 25,
+   "im": 1469,
+   "mm": 1469
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FVS",
+   "name": "藍籌波動指數",
+   "curr": "EUR",
+   "tick": 100,
+   "im": 462,
+   "mm": 462
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "FXXP",
+   "name": "歐洲600指數",
+   "curr": "EUR",
+   "tick": 50,
+   "im": 2227,
+   "mm": 2227
+  },
+  {
+   "group": "歐洲交易所 Eurex",
+   "code": "SMI",
+   "name": "瑞士SMI指數",
+   "curr": "CHF",
+   "tick": 10,
+   "im": 9164,
+   "mm": 9164
+  },
+  {
+   "group": "倫敦金屬交易所 LME",
+   "code": "MAA",
+   "name": "合金鋁3M",
+   "curr": "USD",
+   "tick": 20,
+   "im": 5080,
+   "mm": 5080
+  },
+  {
+   "group": "倫敦金屬交易所 LME",
+   "code": "MCU",
+   "name": "銅3M",
+   "curr": "USD",
+   "tick": 25,
+   "im": 23975,
+   "mm": 23975
+  },
+  {
+   "group": "倫敦金屬交易所 LME",
+   "code": "MAL",
+   "name": "鋁3M",
+   "curr": "USD",
+   "tick": 25,
+   "im": 4800,
+   "mm": 4800
+  },
+  {
+   "group": "倫敦金屬交易所 LME",
+   "code": "MNI",
+   "name": "鎳3M",
+   "curr": "USD",
+   "tick": 6,
+   "im": 9708,
+   "mm": 9708
+  },
+  {
+   "group": "倫敦金屬交易所 LME",
+   "code": "MSN",
+   "name": "錫3M",
+   "curr": "USD",
+   "tick": 5,
+   "im": 33580,
+   "mm": 33580
+  },
+  {
+   "group": "倫敦金屬交易所 LME",
+   "code": "MZN",
+   "name": "鋅3M",
+   "curr": "USD",
+   "tick": 25,
+   "im": 7650,
+   "mm": 7650
+  },
+  {
+   "group": "倫敦金屬交易所 LME",
+   "code": "MPB",
+   "name": "鉛3M",
+   "curr": "USD",
+   "tick": 25,
+   "im": 2950,
+   "mm": 2950
+  },
+  {
+   "group": "澳洲交易所 ASX",
+   "code": "AP",
+   "name": "澳洲指數",
+   "curr": "AUD",
+   "tick": 25,
+   "im": 15743,
+   "mm": 15743
+  },
+  {
+   "group": "澳洲交易所 ASX",
+   "code": "YTS",
+   "name": "澳洲十年債",
+   "curr": "AUD",
+   "tick": 9400,
+   "im": 2542,
+   "mm": 2542
+  },
+  {
+   "group": "澳洲交易所 ASX",
+   "code": "YTU",
+   "name": "澳洲三年債",
+   "curr": "AUD",
+   "tick": 3000,
+   "im": 1059,
+   "mm": 1059
+  },
+  {
+   "group": "澳洲交易所 ASX",
+   "code": "YBA",
+   "name": "90天票券",
+   "curr": "AUD",
+   "tick": 2400,
+   "im": 1037,
+   "mm": 1037
+  },
+  {
+   "group": "澳洲交易所 ASX",
+   "code": "YIB",
+   "name": "30天利率",
+   "curr": "AUD",
+   "tick": 2466,
+   "im": 577,
+   "mm": 577
+  },
+  {
+   "group": "CBOE 期貨交易所 CFE",
+   "code": "VX",
+   "name": "VIX指數",
+   "curr": "USD",
+   "tick": 1000,
+   "im": 8184,
+   "mm": 7440
+  },
+  {
+   "group": "CBOE 期貨交易所 CFE",
+   "code": "VXM",
+   "name": "小VIX指數",
+   "curr": "USD",
+   "tick": 100,
+   "im": 853,
+   "mm": 775
+  },
+  {
+   "group": "印度國際交易所 NIF",
+   "code": "NIFTY",
+   "name": "印度指數",
+   "curr": "USD",
+   "tick": 2,
+   "im": 2442,
+   "mm": 2220
+  }
+ ]
+}

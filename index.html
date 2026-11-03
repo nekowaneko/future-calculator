@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>海期平倉計算機</title>
+<meta name="description" content="依元大期貨國外期貨代沖銷規則，試算再虧幾點會被追繳或平倉。">
+<meta name="theme-color" content="#3A4250">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="平倉計算機">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&display=swap">
+<style>
+/* 暖石板琥珀 — 設計 token，請勿手動修改 */
+
+:root, [data-theme="light"] {
+  --surface-page: #F4F1EC;
+  --surface-card: #FFFFFF;
+  --surface-slate: #3A4250;
+  --ink: #2B313C;
+  --ink-muted: #636B78;
+  --on-slate: #E8E2D6;
+  --amber: #E9A23B;
+  --on-amber: #3A2A0C;
+  --amber-text: #8A5A12;
+  --amber-soft: #F7E6C4;
+  --amber-on-slate: #F2B544;
+  --progress-fill: #B07014;
+  --progress-track: #ECE7DE;
+  --line: #E2DCD1;
+  --success: #2A7050;
+  --success-soft: #DCEFE4;
+  --danger: #B23B2E;
+  --danger-soft: #F8DEDA;
+  --focus: #B07014;
+}
+
+[data-theme="dark"] {
+  --surface-page: #1E2229;
+  --surface-card: #272C35;
+  --surface-slate: #4A5363;
+  --ink: #EEEAE3;
+  --ink-muted: #A3ABB8;
+  --on-slate: #E8E2D6;
+  --amber: #F2B544;
+  --on-amber: #3A2A0C;
+  --amber-text: #F2B544;
+  --amber-soft: #4A3A1E;
+  --amber-on-slate: #F2B544;
+  --progress-fill: #F2B544;
+  --progress-track: #343A45;
+  --line: #3A404B;
+  --success: #6CC59A;
+  --success-soft: #1F3A2D;
+  --danger: #F08A7E;
+  --danger-soft: #45231F;
+  --focus: #F2B544;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --surface-page: #1E2229;
+    --surface-card: #272C35;
+    --surface-slate: #4A5363;
+    --ink: #EEEAE3;
+    --ink-muted: #A3ABB8;
+    --on-slate: #E8E2D6;
+    --amber: #F2B544;
+    --on-amber: #3A2A0C;
+    --amber-text: #F2B544;
+    --amber-soft: #4A3A1E;
+    --amber-on-slate: #F2B544;
+    --progress-fill: #F2B544;
+    --progress-track: #343A45;
+    --line: #3A404B;
+    --success: #6CC59A;
+    --success-soft: #1F3A2D;
+    --danger: #F08A7E;
+    --danger-soft: #45231F;
+    --focus: #F2B544;
+  }
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --radius-bar: 2px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+
+.sl-text-display { font-family: var(--font-sans); font-size: 28px; line-height: 36px; font-weight: 500; }
+.sl-text-title { font-family: var(--font-sans); font-size: 20px; line-height: 28px; font-weight: 500; }
+.sl-text-stat { font-family: var(--font-sans); font-size: 24px; line-height: 30px; font-weight: 500; }
+.sl-text-body { font-family: var(--font-sans); font-size: 15px; line-height: 24px; font-weight: 400; }
+.sl-text-label { font-family: var(--font-sans); font-size: 13px; line-height: 20px; font-weight: 500; }
+.sl-text-caption { font-family: var(--font-sans); font-size: 12px; line-height: 18px; font-weight: 400; }
+
+/* components.css */
+body { margin: 0; font-family: var(--font-sans); background: var(--surface-page); color: var(--ink); font-size: 15px; line-height: 24px; }
+.sl-row { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; padding: var(--space-4); }
+.sl-btn { font: inherit; font-size: 13px; font-weight: 500; height: 36px; padding: 0 var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface-card); color: var(--ink); cursor: pointer; }
+.sl-btn:hover { border-color: var(--ink-muted); }
+.sl-btn-primary { background: var(--amber); border-color: var(--amber); color: var(--on-amber); }
+.sl-btn-primary:hover { border-color: var(--on-amber); }
+.sl-btn-slate { background: var(--surface-slate); border-color: var(--surface-slate); color: var(--on-slate); }
+.sl-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.sl-badge { display: inline-block; font-size: 12px; line-height: 20px; padding: 0 var(--space-2); border-radius: var(--radius-pill); background: var(--line); color: var(--ink); }
+.sl-badge-amber { background: var(--amber-soft); color: var(--amber-text); }
+.sl-badge-success { background: var(--success-soft); color: var(--success); }
+.sl-badge-danger { background: var(--danger-soft); color: var(--danger); }
+.sl-bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+.sl-card { background: var(--surface-card); border-radius: var(--radius-lg); padding: var(--space-3) var(--space-4); }
+.sl-card-label { font-size: 12px; line-height: 18px; color: var(--ink-muted); }
+.sl-card-value { font-size: 24px; line-height: 30px; font-weight: 500; color: var(--ink); }
+.sl-card-slate { background: var(--surface-slate); }
+.sl-card-slate .sl-card-label { color: var(--on-slate); }
+.sl-card-slate .sl-card-value { color: var(--amber-on-slate); }
+.sl-progress-head { display: flex; justify-content: space-between; font-size: 12px; line-height: 18px; color: var(--ink-muted); margin-bottom: 6px; }
+.sl-progress-num { color: var(--ink); font-weight: 500; }
+.sl-progress-track { height: 4px; border-radius: var(--radius-bar); background: var(--progress-track); overflow: hidden; }
+.sl-progress-fill { height: 100%; border-radius: var(--radius-bar); background: var(--progress-fill); }
+
+/* 新增元件（待併入設計系統）：Field、Select、Input */
+.sl-field { display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; }
+.sl-field-label { font-size: 13px; line-height: 20px; font-weight: 500; color: var(--ink); }
+.sl-field-hint { font-size: 12px; line-height: 18px; color: var(--ink-muted); }
+.sl-field-error { font-size: 12px; line-height: 18px; color: var(--danger); }
+.sl-select, .sl-input { font: inherit; font-size: 15px; height: 40px; width: 100%; box-sizing: border-box; padding: 0 var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface-card); color: var(--ink); }
+.sl-input { font-variant-numeric: tabular-nums; }
+.sl-select:hover, .sl-input:hover { border-color: var(--ink-muted); }
+.sl-select:focus-visible, .sl-input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.sl-input[aria-invalid="true"] { border-color: var(--danger); }
+.sl-input-group { display: flex; align-items: center; gap: var(--space-2); }
+.sl-input-unit { font-size: 13px; line-height: 20px; color: var(--ink-muted); white-space: nowrap; }
+
+/* 新增元件（待併入設計系統）：Suggest 候選清單 */
+.sl-suggest { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface-card); overflow: hidden; }
+.sl-suggest-item { font: inherit; font-size: 14px; line-height: 20px; text-align: left; display: flex; gap: var(--space-2); align-items: baseline; padding: var(--space-2) var(--space-3); border: 0; border-bottom: 1px solid var(--line); background: var(--surface-card); color: var(--ink); cursor: pointer; }
+.sl-suggest-item:last-child { border-bottom: 0; }
+.sl-suggest-item:hover, .sl-suggest-item[aria-selected="true"] { background: var(--amber-soft); }
+.sl-suggest-code { font-weight: 500; min-width: 4.5em; }
+.sl-suggest-group { margin-left: auto; font-size: 12px; color: var(--ink-muted); white-space: nowrap; }
+
+/* 新增元件（待併入設計系統）：Table 表格 */
+.sl-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-md); max-height: 480px; overflow-y: auto; }
+.sl-table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 20px; font-variant-numeric: tabular-nums; }
+.sl-table th { position: sticky; top: 0; background: var(--surface-page); color: var(--ink-muted); font-weight: 500; text-align: left; padding: var(--space-2) var(--space-3); white-space: nowrap; }
+.sl-table td { padding: var(--space-2) var(--space-3); border-top: 1px solid var(--line); vertical-align: top; }
+.sl-table td:first-child { font-weight: 500; white-space: nowrap; }
+.sl-table-sub { display: block; font-size: 12px; color: var(--ink-muted); }
+
+/* 新增元件（待併入設計系統）：Term 名詞解釋 */
+.sl-term { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline dashed; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.sl-term[aria-expanded="true"] { text-decoration-style: solid; }
+.sl-term:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--radius-bar); }
+.sl-term-def { grid-column: 1 / -1; background: var(--amber-soft); color: var(--ink); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); font-size: 13px; line-height: 20px; font-weight: 400; }
+.sl-term-def b { font-weight: 500; }
+
+/* 頁面版面（非元件） */
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+[hidden] { display: none !important; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; } }
+:root[data-theme="dark"] { color-scheme: dark; }
+body { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: var(--space-6); }
+.pg { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-6); }
+.pg-head { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--space-3); flex-wrap: wrap; }
+.pg-head h1 { margin: 0; text-wrap: balance; }
+.pg-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); align-items: start; }
+@media (min-width: 860px) { .pg-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); } }
+.pg-panel { background: var(--surface-card); border-radius: var(--radius-lg); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+.pg-spec { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); border-top: 1px solid var(--line); padding-top: var(--space-3); }
+.pg-spec dt { font-size: 12px; line-height: 18px; color: var(--ink-muted); }
+.pg-spec dd { margin: 0; font-size: 15px; font-weight: 500; font-variant-numeric: tabular-nums; }
+#product { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 40px); }
+.pg-lev { border-top: 1px solid var(--line); padding-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-1); }
+.pg-margins { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.pg-result { display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
+.pg-hero .sl-card-value { font-size: 40px; line-height: 48px; font-variant-numeric: tabular-nums; }
+.pg-hero-sub { font-size: 13px; line-height: 20px; color: var(--on-slate); }
+.pg-num { font-variant-numeric: tabular-nums; }
+.pg-formula { font-size: 12px; line-height: 18px; color: var(--ink-muted); overflow-x: auto; }
+.pg-empty, .pg-loading, .pg-fail { background: var(--surface-card); border-radius: var(--radius-lg); padding: var(--space-6) var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-start; }
+.pg-skel { height: 12px; border-radius: var(--radius-bar); background: var(--progress-track); }
+.pg-note { font-size: 12px; line-height: 18px; color: var(--ink-muted); display: flex; flex-direction: column; gap: var(--space-1); }
+.pg-note a { color: var(--amber-text); }
+.pg-tools { display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: center; border-top: 1px dashed var(--line); padding-top: var(--space-3); }
+@media (prefers-reduced-motion: no-preference) { .pg-skel { animation: pulse 1.2s ease-in-out infinite; } }
+@keyframes pulse { 50% { opacity: .45; } }
+</style>
+
+</head>
+<body>
+<main class="pg">
+  <header class="pg-head">
+    <div>
+      <h1 class="sl-text-display">海期平倉計算機</h1>
+      <div class="sl-text-caption" style="color: var(--ink-muted);">依元大期貨國外期貨盤中代沖銷規則（足額維持率低於 25%）試算</div>
+    </div>
+    <span id="dataBadge" class="sl-badge">載入中</span>
+  </header>
+
+  <div class="pg-grid">
+    <!-- 輸入區 -->
+    <section class="pg-panel" aria-labelledby="inTitle">
+      <div id="inTitle" class="sl-text-title">部位設定</div>
+
+      <div id="formLoading" class="pg-loading" hidden style="padding: 0;">
+        <div class="sl-text-label">正在載入商品保證金</div>
+        <div class="pg-skel" style="width: 100%;"></div>
+        <div class="pg-skel" style="width: 70%;"></div>
+        <div class="pg-skel" style="width: 85%;"></div>
+      </div>
+
+      <div id="formFail" class="pg-fail" hidden style="padding: 0;">
+        <span class="sl-badge sl-badge-danger">載入失敗</span>
+        <div class="sl-text-body">無法取得商品保證金資料，請稍後重新載入。</div>
+        <button id="retryBtn" class="sl-btn" type="button">重新載入</button>
+      </div>
+
+      <div id="formBody" class="pg-result">
+        <div class="sl-field">
+          <label class="sl-field-label" for="product">期貨商品</label>
+          <input id="product" class="sl-input" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="productSuggest" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="輸入代號或名稱，例如 MGC">
+          <div id="productSuggest" class="sl-suggest" role="listbox" aria-label="符合的商品" hidden></div>
+          <div id="productHint" class="sl-field-hint">共 213 檔元大國外期貨商品</div>
+          <div><button id="tableToggle" class="sl-btn" type="button" aria-expanded="false" aria-controls="settleSection">查看附表</button></div>
+        </div>
+
+        <div class="sl-field">
+          <div class="sl-field-label" data-term-anchor><button class="sl-term" type="button" data-term="lots">口數</button></div>
+          <div class="sl-input-group">
+            <input id="lots" aria-label="口數" class="sl-input" type="number" inputmode="numeric" min="1" step="1" value="1">
+            <span class="sl-input-unit">口</span>
+          </div>
+          <div id="lotsErr" class="sl-field-error" hidden></div>
+        </div>
+
+        <div class="sl-field">
+          <div class="sl-field-label" data-term-anchor><button class="sl-term" type="button" data-term="equity">帳戶權益數</button></div>
+          <div class="sl-input-group">
+            <input id="equity" aria-label="帳戶權益數" class="sl-input" type="number" inputmode="decimal" min="0" step="any" value="10000">
+            <span id="equityUnit" class="sl-input-unit">USD</span>
+          </div>
+          <div class="sl-field-hint" data-term-anchor>下單前填帳戶餘額；已持倉請填目前權益數。以商品的<button class="sl-term" type="button" data-term="currency">結算幣別</button>輸入</div>
+          <div id="equityErr" class="sl-field-error" hidden></div>
+        </div>
+
+        <dl id="spec" class="pg-spec" style="margin: 0; grid-template-columns: minmax(0, 1fr);">
+          <div data-term-anchor><dt><button class="sl-term" type="button" data-term="tick">每一大點價值</button></dt><dd id="specTick">—</dd></div>
+        </dl>
+
+        <div class="pg-margins">
+          <div class="sl-field">
+            <div class="sl-field-label" data-term-anchor><button class="sl-term" type="button" data-term="im">原始保證金</button><span class="sl-text-caption" style="color: var(--ink-muted);">（每口）</span></div>
+            <div class="sl-input-group">
+              <input id="im" aria-label="原始保證金（每口）" class="sl-input" type="number" inputmode="decimal" min="0" step="any">
+              <span class="sl-input-unit pg-curr">USD</span>
+            </div>
+            <div id="imErr" class="sl-field-error" hidden></div>
+          </div>
+          <div class="sl-field">
+            <div class="sl-field-label" data-term-anchor><button class="sl-term" type="button" data-term="mm">維持保證金</button><span class="sl-text-caption" style="color: var(--ink-muted);">（每口）</span></div>
+            <div class="sl-input-group">
+              <input id="mm" aria-label="維持保證金（每口）" class="sl-input" type="number" inputmode="decimal" min="0" step="any">
+              <span class="sl-input-unit pg-curr">USD</span>
+            </div>
+            <div id="mmErr" class="sl-field-error" hidden></div>
+          </div>
+        </div>
+        <div class="sl-row" style="padding: 0;">
+          <button id="resetMargin" class="sl-btn" type="button" hidden>還原預設值</button>
+        </div>
+        <div class="sl-field">
+          <div class="sl-field-label" data-term-anchor><button class="sl-term" type="button" data-term="price">目前價格</button><span class="sl-text-caption" style="color: var(--ink-muted);">（選填）</span></div>
+          <input id="price" aria-label="目前價格" class="sl-input" type="number" inputmode="decimal" min="0" step="any" placeholder="從看盤軟體抄目前成交價">
+          <div id="priceErr" class="sl-field-error" hidden></div>
+        </div>
+        <div class="pg-lev" data-term-anchor>
+          <div class="sl-card-label"><button class="sl-term" type="button" data-term="leverage">目前槓桿倍率</button></div>
+          <div class="sl-card-value pg-num" id="levVal">—</div>
+          <div class="pg-formula" id="levFormula"></div>
+        </div>
+        <div id="specSrc" class="sl-text-caption" style="color: var(--ink-muted); display: flex; gap: var(--space-2); align-items: center; flex-wrap: wrap;"></div>
+      </div>
+    </section>
+
+    <!-- 結果區 -->
+    <section class="pg-result" aria-labelledby="outTitle" aria-live="polite">
+      <div id="outTitle" class="sl-text-title">試算結果</div>
+
+      <div id="outLoading" class="pg-loading" hidden>
+        <div class="pg-skel" style="width: 40%; height: 16px;"></div>
+        <div class="pg-skel" style="width: 70%; height: 32px;"></div>
+        <div class="pg-skel" style="width: 55%;"></div>
+      </div>
+
+      <div id="outEmpty" class="pg-empty" hidden>
+        <div class="sl-text-label">還沒選擇期貨商品</div>
+        <div class="sl-text-body" style="color: var(--ink-muted);">選好商品、填入口數與保證金後，這裡會顯示再虧幾點會被代沖銷。</div>
+      </div>
+
+      <div id="outError" class="pg-empty" hidden>
+        <span class="sl-badge sl-badge-danger">無法試算</span>
+        <div id="outErrorMsg" class="sl-text-body">請修正左側標示的欄位。</div>
+      </div>
+
+      <div id="outOk" class="pg-result" hidden>
+        <div class="sl-card" data-term-anchor>
+          <div class="sl-card-label">收盤時再虧多少<button class="sl-term" type="button" data-term="point">點</button>會被<button class="sl-term" type="button" data-term="margincall">追繳</button></div>
+          <div class="sl-card-value pg-num"><span id="callPoints">—</span><span style="font-size: 16px;"> 點</span></div>
+          <div class="pg-formula" id="callFormula"></div>
+          <div class="sl-text-caption" id="callSettle" style="color: var(--ink-muted);"></div>
+        </div>
+        <div class="sl-card sl-card-slate pg-hero" data-term-anchor>
+          <div class="sl-card-label">再虧多少<button class="sl-term" type="button" data-term="point">點</button>會被<button class="sl-term" type="button" data-term="liquidate">代沖銷</button></div>
+          <div class="sl-card-value"><span id="resPoints">—</span><span style="font-size: 20px;"> 點</span></div>
+          <div id="resHeroSub" class="pg-hero-sub">—</div>
+        </div>
+
+        <div class="sl-row" style="padding: 0;" data-term-anchor>
+          <span id="resBadge" class="sl-badge">—</span>
+          <span id="resBadgeNote" class="sl-text-caption" style="color: var(--ink-muted);"></span>
+        </div>
+
+        <div class="sl-bento">
+          <div class="sl-card" data-term-anchor>
+            <div class="sl-card-label"><button class="sl-term" type="button" data-term="loss">可承受虧損金額</button></div>
+            <div class="sl-card-value pg-num" id="resLoss">—</div>
+          </div>
+          <div class="sl-card" data-term-anchor>
+            <div class="sl-card-label"><button class="sl-term" type="button" data-term="line">代沖銷門檻權益數</button></div>
+            <div class="sl-card-value pg-num" id="resLine">—</div>
+          </div>
+          <div class="sl-card" style="grid-column: span 2;" data-term-anchor>
+            <div class="sl-progress-head"><span><button class="sl-term" type="button" data-term="ratio">目前足額維持率</button></span><span class="sl-progress-num" id="resRatio">—</span></div>
+            <div id="resTrack" class="sl-progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="400" aria-label="目前足額維持率">
+              <div id="resFill" class="sl-progress-fill" style="width: 0%;"></div>
+            </div>
+            <div class="sl-text-caption" style="color: var(--ink-muted); margin-top: 6px;">進度條滿格為 400%；跌到 25% 即代沖銷</div>
+          </div>
+        </div>
+
+        <div id="resFormula" class="pg-formula"></div>
+      </div>
+    </section>
+  </div>
+
+  <section id="settleSection" class="pg-panel" aria-labelledby="settleTitle" hidden>
+    <div class="pg-head" style="align-items: center;">
+      <div id="settleTitle" class="sl-text-title">收盤結算時間附表</div>
+      <button id="tableClose" class="sl-btn" type="button">收起附表</button>
+    </div>
+    <div class="sl-field">
+      <label class="sl-field-label" for="settleSearch">搜尋商品</label>
+      <input id="settleSearch" class="sl-input" type="search" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="輸入代號、名稱或交易所，例如 MGC、黃金、SGX">
+      <div id="settleCount" class="sl-field-hint"></div>
+    </div>
+    <div class="sl-table-wrap">
+      <table class="sl-table">
+        <thead><tr><th scope="col">代號</th><th scope="col">商品</th><th scope="col">結算時間（當地）</th><th scope="col">臺灣時間</th></tr></thead>
+        <tbody id="settleBody"></tbody>
+      </table>
+    </div>
+    <div class="pg-note">
+      <div>臺灣時間依今天日期換算，會隨美國、英國夏令時間自動調整。結算時間是交易所取價計算結算價的時段，提前收盤日另有規定。</div>
+      <div>來源：芝商所商品取自 <a href="https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457085528/Daily+Settlement+Time+Details">CME Daily Settlement Time Details</a>；股價指數另見 <a href="https://cmegroup.com/education/articles-and-reports/faq-daily-settlement-price-determination-time-change.html">CME 結算時間變更說明</a>。其他交易所尚未查證。</div>
+    </div>
+  </section>
+
+  <footer class="pg-note">
+    <div>平倉點數 ＝（帳戶權益數 − 25% × 維持保證金 × 口數）÷（每一大點價值 × 口數）。未計入手續費、匯率與滑價，實際代沖銷可能以市價成交，虧損會超過試算值。</div>
+    <div><span id="dataNote">保證金載入中</span>規則來源：<a href="https://www.yuantafutures.com.tw/riskcontrol_02">元大期貨風險規則說明</a>；保證金以<a href="https://www.yuantafutures.com.tw/margin_02">元大國外商品保證金</a>當日公告為準。</div>
+  </footer>
+</main>
+
+<script>
+// 常數定義：內建商品資料（2026/11/03 16:31），只在讀不到 data/margins.json 時使用
+const dataSource = { label: '元大期貨國外商品保證金', date: '2026/11/03 16:31', url: 'https://www.yuantafutures.com.tw/margin_02', live: false }
+const dataUrl = 'data/margins.json'
+const products = [
+  {"group": "芝商所 CME", "code": "YM", "name": "小道瓊指數", "curr": "USD", "tick": 5, "im": 16823, "mm": 15293},
+  {"group": "芝商所 CME", "code": "ES", "name": "小SP指數", "curr": "USD", "tick": 50, "im": 28559, "mm": 25962},
+  {"group": "芝商所 CME", "code": "NQ", "name": "小那斯達克", "curr": "USD", "tick": 20, "im": 45744, "mm": 41585},
+  {"group": "芝商所 CME", "code": "NK", "name": "美元日經", "curr": "USD", "tick": 5, "im": 26019, "mm": 23653},
+  {"group": "芝商所 CME", "code": "US", "name": "美國三十年債", "curr": "USD", "tick": 1000, "im": 4070, "mm": 3700},
+  {"group": "芝商所 CME", "code": "TY", "name": "美國十年債", "curr": "USD", "tick": 1000, "im": 2063, "mm": 1875},
+  {"group": "芝商所 CME", "code": "FV", "name": "美國五年債", "curr": "USD", "tick": 1000, "im": 1375, "mm": 1250},
+  {"group": "芝商所 CME", "code": "TU", "name": "美國二年債", "curr": "USD", "tick": 2000, "im": 1320, "mm": 1200},
+  {"group": "芝商所 CME", "code": "UB", "name": "美國超長債", "curr": "USD", "tick": 1000, "im": 5665, "mm": 5150},
+  {"group": "芝商所 CME", "code": "ED", "name": "歐洲美元", "curr": "USD", "tick": 2500, "im": 1188, "mm": 1080},
+  {"group": "芝商所 CME", "code": "S", "name": "黃豆", "curr": "USD", "tick": 50, "im": 2530, "mm": 2300},
+  {"group": "芝商所 CME", "code": "BO", "name": "黃豆油", "curr": "USD", "tick": 600, "im": 2310, "mm": 2100},
+  {"group": "芝商所 CME", "code": "SM", "name": "黃豆粉", "curr": "USD", "tick": 100, "im": 1705, "mm": 1550},
+  {"group": "芝商所 CME", "code": "YK", "name": "小黃豆", "curr": "USD", "tick": 10, "im": 506, "mm": 460},
+  {"group": "芝商所 CME", "code": "YC", "name": "小玉米", "curr": "USD", "tick": 10, "im": 242, "mm": 220},
+  {"group": "芝商所 CME", "code": "C", "name": "玉米", "curr": "USD", "tick": 50, "im": 1210, "mm": 1100},
+  {"group": "芝商所 CME", "code": "O", "name": "燕麥", "curr": "USD", "tick": 50, "im": 1375, "mm": 1250},
+  {"group": "芝商所 CME", "code": "W", "name": "小麥", "curr": "USD", "tick": 50, "im": 2255, "mm": 2050},
+  {"group": "芝商所 CME", "code": "RR", "name": "粗米", "curr": "USD", "tick": 2000, "im": 1375, "mm": 1250},
+  {"group": "芝商所 CME", "code": "AD", "name": "澳幣", "curr": "USD", "tick": 10, "im": 1925, "mm": 1750},
+  {"group": "芝商所 CME", "code": "BP", "name": "英鎊", "curr": "USD", "tick": 6.25, "im": 1870, "mm": 1700},
+  {"group": "芝商所 CME", "code": "CD", "name": "加幣", "curr": "USD", "tick": 10, "im": 880, "mm": 800},
+  {"group": "芝商所 CME", "code": "SF", "name": "瑞朗", "curr": "USD", "tick": 12.5, "im": 3960, "mm": 3600},
+  {"group": "芝商所 CME", "code": "EC", "name": "歐元", "curr": "USD", "tick": 12.5, "im": 2310, "mm": 2100},
+  {"group": "芝商所 CME", "code": "ECM", "name": "微歐元", "curr": "USD", "tick": 1.25, "im": 231, "mm": 210},
+  {"group": "芝商所 CME", "code": "E7", "name": "小歐元", "curr": "USD", "tick": 6.25, "im": 1155, "mm": 1050},
+  {"group": "芝商所 CME", "code": "JY", "name": "日元", "curr": "USD", "tick": 12.5, "im": 3080, "mm": 2800},
+  {"group": "芝商所 CME", "code": "RY", "name": "歐元兌日元", "curr": "JPY", "tick": 125000, "im": 742500, "mm": 675000},
+  {"group": "芝商所 CME", "code": "UE", "name": "歐元兌英鎊", "curr": "GBP", "tick": 1.25, "im": 1650, "mm": 1500},
+  {"group": "芝商所 CME", "code": "NE", "name": "紐幣", "curr": "USD", "tick": 10, "im": 1320, "mm": 1200},
+  {"group": "芝商所 CME", "code": "MP", "name": "墨西哥披索", "curr": "USD", "tick": 0.5, "im": 1210, "mm": 1100},
+  {"group": "芝商所 CME", "code": "PL", "name": "白金", "curr": "USD", "tick": 50, "im": 7040, "mm": 6400},
+  {"group": "芝商所 CME", "code": "PA", "name": "鈀金", "curr": "USD", "tick": 100, "im": 9589, "mm": 8717},
+  {"group": "芝商所 CME", "code": "CL", "name": "輕原油", "curr": "USD", "tick": 1000, "im": 11410, "mm": 10372},
+  {"group": "芝商所 CME", "code": "QM", "name": "小輕原油", "curr": "USD", "tick": 500, "im": 5716, "mm": 5196},
+  {"group": "芝商所 CME", "code": "HO", "name": "熱燃油", "curr": "USD", "tick": 42000, "im": 15812, "mm": 14374},
+  {"group": "芝商所 CME", "code": "NG", "name": "天然氣", "curr": "USD", "tick": 10000, "im": 3276, "mm": 2978},
+  {"group": "芝商所 CME", "code": "QG", "name": "小天然氣", "curr": "USD", "tick": 2500, "im": 827, "mm": 751},
+  {"group": "芝商所 CME", "code": "LC", "name": "活牛", "curr": "USD", "tick": 400, "im": 3300, "mm": 3000},
+  {"group": "芝商所 CME", "code": "RB", "name": "無鉛汽油", "curr": "USD", "tick": 42000, "im": 10400, "mm": 9454},
+  {"group": "芝商所 CME", "code": "FC", "name": "肉牛", "curr": "USD", "tick": 500, "im": 5940, "mm": 5400},
+  {"group": "芝商所 CME", "code": "LH", "name": "瘦肉豬", "curr": "USD", "tick": 400, "im": 1650, "mm": 1500},
+  {"group": "芝商所 CME", "code": "BZ", "name": "CME布侖特", "curr": "USD", "tick": 1000, "im": 13581, "mm": 12346},
+  {"group": "芝商所 CME", "code": "GC", "name": "黃金", "curr": "USD", "tick": 100, "im": 21833, "mm": 19848},
+  {"group": "芝商所 CME", "code": "MGC", "name": "微黃金", "curr": "USD", "tick": 10, "im": 2184, "mm": 1985},
+  {"group": "芝商所 CME", "code": "SI", "name": "白銀", "curr": "USD", "tick": 5000, "im": 24630, "mm": 22391},
+  {"group": "芝商所 CME", "code": "HG", "name": "銅", "curr": "USD", "tick": 25000, "im": 11000, "mm": 10000},
+  {"group": "芝商所 CME", "code": "ALI", "name": "鋁", "curr": "USD", "tick": 25, "im": 5500, "mm": 5000},
+  {"group": "芝商所 CME", "code": "10Y", "name": "微10年殖利率", "curr": "USD", "tick": 1000, "im": 330, "mm": 300},
+  {"group": "芝商所 CME", "code": "1OZ", "name": "一盎司黃金", "curr": "USD", "tick": 1, "im": 219, "mm": 199},
+  {"group": "芝商所 CME", "code": "BIO", "name": "小NQ生技", "curr": "USD", "tick": 25, "im": 13567, "mm": 12333},
+  {"group": "芝商所 CME", "code": "BR", "name": "巴西幣", "curr": "USD", "tick": 10, "im": 1265, "mm": 1150},
+  {"group": "芝商所 CME", "code": "ESG", "name": "小SP ESG指數", "curr": "USD", "tick": 500, "im": 20452, "mm": 18592},
+  {"group": "芝商所 CME", "code": "M2K", "name": "微羅素2000", "curr": "USD", "tick": 5, "im": 1198, "mm": 1089},
+  {"group": "芝商所 CME", "code": "M6A", "name": "微澳幣", "curr": "USD", "tick": 1, "im": 193, "mm": 175},
+  {"group": "芝商所 CME", "code": "M6B", "name": "微英鎊", "curr": "USD", "tick": 0.63, "im": 187, "mm": 170},
+  {"group": "芝商所 CME", "code": "MCD", "name": "微加幣", "curr": "USD", "tick": 1, "im": 88, "mm": 80},
+  {"group": "芝商所 CME", "code": "MCL", "name": "微輕原油", "curr": "USD", "tick": 100, "im": 1143, "mm": 1039},
+  {"group": "芝商所 CME", "code": "ME", "name": "小標普400", "curr": "USD", "tick": 100, "im": 27671, "mm": 25155},
+  {"group": "芝商所 CME", "code": "MES", "name": "微SP指數", "curr": "USD", "tick": 5, "im": 2856, "mm": 2596},
+  {"group": "芝商所 CME", "code": "MHG", "name": "微銅", "curr": "USD", "tick": 2500, "im": 1100, "mm": 1000},
+  {"group": "芝商所 CME", "code": "MNG", "name": "微天然氣", "curr": "USD", "tick": 1000, "im": 332, "mm": 301},
+  {"group": "芝商所 CME", "code": "MNIK", "name": "微型日元日經", "curr": "JPY", "tick": 50, "im": 264593, "mm": 240539},
+  {"group": "芝商所 CME", "code": "MNK", "name": "微美元日經", "curr": "USD", "tick": 0.5, "im": 2602, "mm": 2365},
+  {"group": "芝商所 CME", "code": "MNQ", "name": "微那斯達克", "curr": "USD", "tick": 2, "im": 4575, "mm": 4159},
+  {"group": "芝商所 CME", "code": "MYM", "name": "微道瓊指數", "curr": "USD", "tick": 0.5, "im": 1682, "mm": 1529},
+  {"group": "芝商所 CME", "code": "MZC", "name": "微玉米", "curr": "USD", "tick": 5, "im": 121, "mm": 110},
+  {"group": "芝商所 CME", "code": "MZS", "name": "微黃豆", "curr": "USD", "tick": 5, "im": 253, "mm": 230},
+  {"group": "芝商所 CME", "code": "NY", "name": "日元日經", "curr": "JPY", "tick": 500, "im": 2645925, "mm": 2405386},
+  {"group": "芝商所 CME", "code": "QI", "name": "小白銀", "curr": "USD", "tick": 2500, "im": 12315, "mm": 11196},
+  {"group": "芝商所 CME", "code": "QO", "name": "小黃金", "curr": "USD", "tick": 50, "im": 10917, "mm": 9924},
+  {"group": "芝商所 CME", "code": "RA", "name": "南非幣", "curr": "USD", "tick": 0.5, "im": 1760, "mm": 1600},
+  {"group": "芝商所 CME", "code": "RE", "name": "道瓊房地產", "curr": "USD", "tick": 100, "im": 2712, "mm": 2465},
+  {"group": "芝商所 CME", "code": "RTY", "name": "小羅素2000", "curr": "USD", "tick": 50, "im": 11984, "mm": 10894},
+  {"group": "芝商所 CME", "code": "RU", "name": "俄羅斯盧布", "curr": "USD", "tick": 2.5, "im": 6820, "mm": 6200},
+  {"group": "芝商所 CME", "code": "SDA", "name": "SP500年股息", "curr": "USD", "tick": 250, "im": 425, "mm": 386},
+  {"group": "芝商所 CME", "code": "SDI", "name": "SP500季股息", "curr": "USD", "tick": 1000, "im": 649, "mm": 590},
+  {"group": "芝商所 CME", "code": "SIC", "name": "100盎司白銀", "curr": "USD", "tick": 100, "im": 493, "mm": 448},
+  {"group": "芝商所 CME", "code": "SIL", "name": "微白銀", "curr": "USD", "tick": 1000, "im": 4926, "mm": 4479},
+  {"group": "芝商所 CME", "code": "SIR", "name": "盧比", "curr": "USD", "tick": 500, "im": 1100, "mm": 1000},
+  {"group": "芝商所 CME", "code": "SR1", "name": "一個月SOFR", "curr": "USD", "tick": 4167, "im": 1348, "mm": 1225},
+  {"group": "芝商所 CME", "code": "SR3", "name": "三個月SOFR", "curr": "USD", "tick": 2500, "im": 908, "mm": 825},
+  {"group": "芝商所 CME", "code": "UN", "name": "美國長期十年債", "curr": "USD", "tick": 1000, "im": 2805, "mm": 2550},
+  {"group": "芝商所 CME", "code": "XAE", "name": "小能源指數", "curr": "USD", "tick": 100, "im": 11096, "mm": 10087},
+  {"group": "芝商所 CME", "code": "XAI", "name": "小工業指數", "curr": "USD", "tick": 100, "im": 9154, "mm": 8321},
+  {"group": "芝商所 CME", "code": "XAP", "name": "小消費必需品", "curr": "USD", "tick": 100, "im": 4789, "mm": 4353},
+  {"group": "芝商所 CME", "code": "XAU", "name": "小公共事業", "curr": "USD", "tick": 100, "im": 6824, "mm": 6203},
+  {"group": "芝商所 CME", "code": "XAV", "name": "小SP衛保", "curr": "USD", "tick": 100, "im": 11021, "mm": 10019},
+  {"group": "芝商所 CME", "code": "YW", "name": "小小麥", "curr": "USD", "tick": 10, "im": 451, "mm": 410},
+  {"group": "芝商所 CME", "code": "ZQ", "name": "30天聯邦基金", "curr": "USD", "tick": 4167, "im": 677, "mm": 615},
+  {"group": "新加坡交易所 SGX", "code": "STWN", "name": "富時台灣", "curr": "USD", "tick": 40, "im": 12980, "mm": 11800},
+  {"group": "新加坡交易所 SGX", "code": "SSI", "name": "星日經", "curr": "JPY", "tick": 500, "im": 2640000, "mm": 2400000},
+  {"group": "新加坡交易所 SGX", "code": "SNS", "name": "微星日經", "curr": "JPY", "tick": 10, "im": 52800, "mm": 48000},
+  {"group": "新加坡交易所 SGX", "code": "SSG", "name": "新加坡指數", "curr": "SGD", "tick": 100, "im": 2552, "mm": 2320},
+  {"group": "新加坡交易所 SGX", "code": "SCN", "name": "A50指數", "curr": "USD", "tick": 1, "im": 847, "mm": 770},
+  {"group": "新加坡交易所 SGX", "code": "SJB", "name": "十年小日債", "curr": "JPY", "tick": 100000, "im": 154000, "mm": 140000},
+  {"group": "新加坡交易所 SGX", "code": "FEF", "name": "鐵礦石", "curr": "USD", "tick": 100, "im": 839, "mm": 762},
+  {"group": "新加坡交易所 SGX", "code": "SFCH", "name": "H50指數", "curr": "USD", "tick": 2, "im": 1980, "mm": 1800},
+  {"group": "新加坡交易所 SGX", "code": "SFID", "name": "富時印尼", "curr": "USD", "tick": 5, "im": 770, "mm": 700},
+  {"group": "新加坡交易所 SGX", "code": "SFVN", "name": "富時越南", "curr": "USD", "tick": 5, "im": 1045, "mm": 950},
+  {"group": "新加坡交易所 SGX", "code": "SIU", "name": "盧比兌美元", "curr": "USD", "tick": 200, "im": 352, "mm": 320},
+  {"group": "新加坡交易所 SGX", "code": "SMTW", "name": "微富時台灣", "curr": "USD", "tick": 4, "im": 1298, "mm": 1180},
+  {"group": "新加坡交易所 SGX", "code": "STF", "name": "20號橡膠", "curr": "USD", "tick": 50, "im": 990, "mm": 900},
+  {"group": "東京商品交易所 TOCOM", "code": "JGL", "name": "東京汽油", "curr": "JPY", "tick": 50, "im": 474500, "mm": 474500},
+  {"group": "東京商品交易所 TOCOM", "code": "JKE", "name": "東京燃油", "curr": "JPY", "tick": 50, "im": 850200, "mm": 850200},
+  {"group": "東京商品交易所 TOCOM", "code": "JCO", "name": "東京原油", "curr": "JPY", "tick": 50, "im": 780650, "mm": 780650},
+  {"group": "東京商品交易所 TOCOM", "code": "JCA", "name": "中京汽油", "curr": "JPY", "tick": 10, "im": 99710, "mm": 99710},
+  {"group": "日本交易所 JPX", "code": "JNI", "name": "大阪日經", "curr": "JPY", "tick": 1000, "im": 5532435, "mm": 5532435},
+  {"group": "日本交易所 JPX", "code": "JNM", "name": "大阪小日經", "curr": "JPY", "tick": 100, "im": 552318, "mm": 552318},
+  {"group": "日本交易所 JPX", "code": "JNU", "name": "大阪微日經", "curr": "JPY", "tick": 10, "im": 55232, "mm": 55232},
+  {"group": "日本交易所 JPX", "code": "JTI", "name": "東證指數", "curr": "JPY", "tick": 10000, "im": 2741361, "mm": 2741361},
+  {"group": "日本交易所 JPX", "code": "JMT", "name": "小東證指數", "curr": "JPY", "tick": 1000, "im": 274137, "mm": 274137},
+  {"group": "日本交易所 JPX", "code": "JNK", "name": "日經400指數", "curr": "JPY", "tick": 100, "im": 243533, "mm": 243533},
+  {"group": "日本交易所 JPX", "code": "JMI", "name": "東證創業指數", "curr": "JPY", "tick": 1000, "im": 83234, "mm": 83234},
+  {"group": "日本交易所 JPX", "code": "JGB", "name": "日本十年債", "curr": "JPY", "tick": 1000000, "im": 1525560, "mm": 1525560},
+  {"group": "日本交易所 JPX", "code": "JPA", "name": "東京鈀金", "curr": "JPY", "tick": 3000, "im": 1719900, "mm": 1719900},
+  {"group": "日本交易所 JPX", "code": "JSV", "name": "東京白銀", "curr": "JPY", "tick": 30000, "im": 1076400, "mm": 1076400},
+  {"group": "日本交易所 JPX", "code": "JPL", "name": "東京白金", "curr": "JPY", "tick": 500, "im": 486200, "mm": 486200},
+  {"group": "日本交易所 JPX", "code": "JPM", "name": "東京小白金", "curr": "JPY", "tick": 100, "im": 97240, "mm": 97240},
+  {"group": "日本交易所 JPX", "code": "JAU", "name": "東京黃金", "curr": "JPY", "tick": 1000, "im": 1723800, "mm": 1723800},
+  {"group": "日本交易所 JPX", "code": "JAM", "name": "東京小黃金", "curr": "JPY", "tick": 100, "im": 172380, "mm": 172380},
+  {"group": "日本交易所 JPX", "code": "JCR", "name": "東京玉米", "curr": "JPY", "tick": 50, "im": 101400, "mm": 101400},
+  {"group": "日本交易所 JPX", "code": "JAS", "name": "東京黃豆", "curr": "JPY", "tick": 25, "im": 145600, "mm": 145600},
+  {"group": "日本交易所 JPX", "code": "JRB", "name": "東京紅豆", "curr": "JPY", "tick": 80, "im": 52000, "mm": 52000},
+  {"group": "日本交易所 JPX", "code": "JRU", "name": "東京橡膠", "curr": "JPY", "tick": 5000, "im": 106600, "mm": 106600},
+  {"group": "日本交易所 JPX", "code": "JBS", "name": "日本小20年債", "curr": "JPY", "tick": 1000000, "im": 287953, "mm": 287953},
+  {"group": "日本交易所 JPX", "code": "JRT", "name": "東證REIT指數", "curr": "JPY", "tick": 1000, "im": 97987, "mm": 97987},
+  {"group": "韓國交易所 KRX", "code": "10KTB", "name": "韓國十年債", "curr": "KRW", "tick": 1000000, "im": 3277854, "mm": 2185236},
+  {"group": "韓國交易所 KRX", "code": "3KTB", "name": "韓國三年債", "curr": "KRW", "tick": 1000000, "im": 992832, "mm": 661888},
+  {"group": "韓國交易所 KRX", "code": "HAS", "name": "韓華航太", "curr": "KRW", "tick": 10, "im": 2586300, "mm": 1724200},
+  {"group": "韓國交易所 KRX", "code": "HMC", "name": "現代汽車", "curr": "KRW", "tick": 10, "im": 736763, "mm": 491175},
+  {"group": "韓國交易所 KRX", "code": "KIA", "name": "KIA", "curr": "KRW", "tick": 10, "im": 215901, "mm": 143934},
+  {"group": "韓國交易所 KRX", "code": "KQ", "name": "KQ150指數", "curr": "KRW", "tick": 10000, "im": 2453388, "mm": 1635592},
+  {"group": "韓國交易所 KRX", "code": "KS", "name": "KS200指數", "curr": "KRW", "tick": 250000, "im": 46497675, "mm": 30998450},
+  {"group": "韓國交易所 KRX", "code": "KWUSD", "name": "美元兌韓圜", "curr": "KRW", "tick": 10000, "im": 609485, "mm": 406323},
+  {"group": "韓國交易所 KRX", "code": "LGES", "name": "LG新能源", "curr": "KRW", "tick": 10, "im": 877110, "mm": 584740},
+  {"group": "韓國交易所 KRX", "code": "MKS", "name": "小KS200指數", "curr": "KRW", "tick": 50000, "im": 9299535, "mm": 6199690},
+  {"group": "韓國交易所 KRX", "code": "MRASE", "name": "未來資產證券", "curr": "KRW", "tick": 10, "im": 73781, "mm": 49187},
+  {"group": "韓國交易所 KRX", "code": "NAVER", "name": "Naver", "curr": "KRW", "tick": 10, "im": 392925, "mm": 261950},
+  {"group": "韓國交易所 KRX", "code": "SEC", "name": "三星電子", "curr": "KRW", "tick": 10, "im": 829710, "mm": 553140},
+  {"group": "韓國交易所 KRX", "code": "SKH", "name": "SK海力士", "curr": "KRW", "tick": 10, "im": 6311970, "mm": 4207980},
+  {"group": "香港交易所 HKEx", "code": "HSI", "name": "恒生指數", "curr": "HKD", "tick": 50, "im": 92940, "mm": 77450},
+  {"group": "香港交易所 HKEx", "code": "MHI", "name": "小恒生指數", "curr": "HKD", "tick": 10, "im": 18588, "mm": 15490},
+  {"group": "香港交易所 HKEx", "code": "HHI", "name": "H股指數", "curr": "HKD", "tick": 50, "im": 35880, "mm": 29900},
+  {"group": "香港交易所 HKEx", "code": "MCH", "name": "小H股指數", "curr": "HKD", "tick": 10, "im": 7176, "mm": 5980},
+  {"group": "香港交易所 HKEx", "code": "MXJ", "name": "亞洲除日本指數", "curr": "USD", "tick": 100, "im": 5592, "mm": 4660},
+  {"group": "香港交易所 HKEx", "code": "GDU", "name": "美元黃金", "curr": "USD", "tick": 1000, "im": 8268, "mm": 6890},
+  {"group": "香港交易所 HKEx", "code": "HKB", "name": "匯豐控股", "curr": "HKD", "tick": 400, "im": 4704, "mm": 3920},
+  {"group": "香港交易所 HKEx", "code": "HMCA", "name": "中國A50指數", "curr": "USD", "tick": 25, "im": 5364, "mm": 4470},
+  {"group": "香港交易所 HKEx", "code": "HMND", "name": "印度指數", "curr": "USD", "tick": 20, "im": 2340, "mm": 1950},
+  {"group": "香港交易所 HKEx", "code": "HMTW", "name": "台灣指數", "curr": "USD", "tick": 100, "im": 15840, "mm": 13200},
+  {"group": "香港交易所 HKEx", "code": "HTI", "name": "恆生科技", "curr": "HKD", "tick": 50, "im": 25104, "mm": 20920},
+  {"group": "香港交易所 HKEx", "code": "PAI", "name": "中國平安", "curr": "HKD", "tick": 500, "im": 1812, "mm": 1510},
+  {"group": "香港交易所 HKEx", "code": "TCH", "name": "騰訊控股", "curr": "HKD", "tick": 100, "im": 3588, "mm": 2990},
+  {"group": "洲際交易所 ICE 美國", "code": "KC", "name": "咖啡", "curr": "USD", "tick": 375, "im": 16653, "mm": 15139},
+  {"group": "洲際交易所 ICE 美國", "code": "SB", "name": "11號糖", "curr": "USD", "tick": 1120, "im": 1343, "mm": 1221},
+  {"group": "洲際交易所 ICE 美國", "code": "CC", "name": "可可", "curr": "USD", "tick": 10, "im": 7095, "mm": 6450},
+  {"group": "洲際交易所 ICE 美國", "code": "CT", "name": "棉花", "curr": "USD", "tick": 500, "im": 2167, "mm": 1970},
+  {"group": "洲際交易所 ICE 美國", "code": "OJ", "name": "凍橘汁", "curr": "USD", "tick": 150, "im": 2639, "mm": 2399},
+  {"group": "洲際交易所 ICE 美國", "code": "DX", "name": "美元指數", "curr": "USD", "tick": 1000, "im": 2172, "mm": 1974},
+  {"group": "洲際交易所 ICE 美國", "code": "MFNG", "name": "FANG指數", "curr": "USD", "tick": 5, "im": 4245, "mm": 3859},
+  {"group": "洲際交易所 ICE 美國", "code": "MME", "name": "小新興市場", "curr": "USD", "tick": 50, "im": 4174, "mm": 3794},
+  {"group": "洲際交易所 ICE 歐洲", "code": "LCO", "name": "布侖特", "curr": "USD", "tick": 1000, "im": 8238, "mm": 7490},
+  {"group": "洲際交易所 ICE 英國", "code": "FFI", "name": "富時100指數", "curr": "GBP", "tick": 10, "im": 5722, "mm": 5201},
+  {"group": "洲際交易所 ICE 英國", "code": "FLG", "name": "英國長債", "curr": "GBP", "tick": 1000, "im": 1956, "mm": 1779},
+  {"group": "洲際交易所 ICE 英國", "code": "FEI", "name": "3M歐元利率", "curr": "EUR", "tick": 2500, "im": 313, "mm": 285},
+  {"group": "洲際交易所 ICE 英國", "code": "FSS", "name": "3M英鎊利率", "curr": "GBP", "tick": 1250, "im": 368, "mm": 334},
+  {"group": "洲際交易所 ICE 英國", "code": "LKD", "name": "倫敦咖啡", "curr": "USD", "tick": 10, "im": 3759, "mm": 3416},
+  {"group": "洲際交易所 ICE 英國", "code": "LCC", "name": "倫敦可可", "curr": "GBP", "tick": 10, "im": 7816, "mm": 7105},
+  {"group": "洲際交易所 ICE 英國", "code": "LSU", "name": "倫敦白糖", "curr": "USD", "tick": 50, "im": 2054, "mm": 1867},
+  {"group": "洲際交易所 ICE 英國", "code": "SO3", "name": "3M SONIA英鎊", "curr": "GBP", "tick": 2500, "im": 107, "mm": 98},
+  {"group": "洲際交易所 ICE 新加坡", "code": "MBC", "name": "小布侖特", "curr": "USD", "tick": 100, "im": 1087, "mm": 988},
+  {"group": "洲際交易所 ICE 新加坡", "code": "MWC", "name": "小西德州", "curr": "USD", "tick": 100, "im": 1281, "mm": 1164},
+  {"group": "洲際交易所 ICE 新加坡", "code": "SDX", "name": "小美元指數", "curr": "USD", "tick": 200, "im": 438, "mm": 398},
+  {"group": "歐洲交易所 Eurex", "code": "DAX", "name": "DAX指數", "curr": "EUR", "tick": 25, "im": 47850, "mm": 47850},
+  {"group": "歐洲交易所 Eurex", "code": "DXM", "name": "小DAX指數", "curr": "EUR", "tick": 5, "im": 9570, "mm": 9570},
+  {"group": "歐洲交易所 Eurex", "code": "FDXS", "name": "微DAX指數", "curr": "EUR", "tick": 1, "im": 1915, "mm": 1915},
+  {"group": "歐洲交易所 Eurex", "code": "FESB", "name": "歐盟銀行指數", "curr": "EUR", "tick": 50, "im": 1570, "mm": 1570},
+  {"group": "歐洲交易所 Eurex", "code": "FESX", "name": "藍籌50指數", "curr": "EUR", "tick": 10, "im": 4356, "mm": 4356},
+  {"group": "歐洲交易所 Eurex", "code": "FSXE", "name": "微藍籌50", "curr": "EUR", "tick": 1, "im": 436, "mm": 436},
+  {"group": "歐洲交易所 Eurex", "code": "FGBX", "name": "歐元三十年債", "curr": "EUR", "tick": 1000, "im": 4061, "mm": 4061},
+  {"group": "歐洲交易所 Eurex", "code": "FGBL", "name": "歐元十年債", "curr": "EUR", "tick": 1000, "im": 2377, "mm": 2377},
+  {"group": "歐洲交易所 Eurex", "code": "FGBM", "name": "歐元五年債", "curr": "EUR", "tick": 1000, "im": 1280, "mm": 1280},
+  {"group": "歐洲交易所 Eurex", "code": "FGBS", "name": "歐元二年債", "curr": "EUR", "tick": 1000, "im": 454, "mm": 454},
+  {"group": "歐洲交易所 Eurex", "code": "FBTP", "name": "義大利長債", "curr": "EUR", "tick": 1000, "im": 3326, "mm": 3326},
+  {"group": "歐洲交易所 Eurex", "code": "FBTS", "name": "義大利短債", "curr": "EUR", "tick": 1000, "im": 1149, "mm": 1149},
+  {"group": "歐洲交易所 Eurex", "code": "FEHY", "name": "FEHY指數", "curr": "EUR", "tick": 200, "im": 1193, "mm": 1193},
+  {"group": "歐洲交易所 Eurex", "code": "FMCH", "name": "歐洲中國指數", "curr": "USD", "tick": 50, "im": 2475, "mm": 2475},
+  {"group": "歐洲交易所 Eurex", "code": "FMWO", "name": "美元世界指數", "curr": "USD", "tick": 10, "im": 11795, "mm": 11795},
+  {"group": "歐洲交易所 Eurex", "code": "FOAT", "name": "法國十年債", "curr": "EUR", "tick": 1000, "im": 2108, "mm": 2108},
+  {"group": "歐洲交易所 Eurex", "code": "FSEG", "name": "歐洲ESG指數", "curr": "EUR", "tick": 100, "im": 1541, "mm": 1541},
+  {"group": "歐洲交易所 Eurex", "code": "FSTB", "name": "歐洲600銀行", "curr": "EUR", "tick": 50, "im": 2093, "mm": 2093},
+  {"group": "歐洲交易所 Eurex", "code": "FUEM", "name": "彭博興主債指", "curr": "USD", "tick": 200, "im": 582, "mm": 582},
+  {"group": "歐洲交易所 Eurex", "code": "FUHY", "name": "FUHY指數", "curr": "USD", "tick": 100, "im": 2260, "mm": 2260},
+  {"group": "歐洲交易所 Eurex", "code": "FUIG", "name": "FUIG指數", "curr": "USD", "tick": 25, "im": 1469, "mm": 1469},
+  {"group": "歐洲交易所 Eurex", "code": "FVS", "name": "藍籌波動指數", "curr": "EUR", "tick": 100, "im": 462, "mm": 462},
+  {"group": "歐洲交易所 Eurex", "code": "FXXP", "name": "歐洲600指數", "curr": "EUR", "tick": 50, "im": 2227, "mm": 2227},
+  {"group": "歐洲交易所 Eurex", "code": "SMI", "name": "瑞士SMI指數", "curr": "CHF", "tick": 10, "im": 9164, "mm": 9164},
+  {"group": "倫敦金屬交易所 LME", "code": "MAA", "name": "合金鋁3M", "curr": "USD", "tick": 20, "im": 5080, "mm": 5080},
+  {"group": "倫敦金屬交易所 LME", "code": "MCU", "name": "銅3M", "curr": "USD", "tick": 25, "im": 23975, "mm": 23975},
+  {"group": "倫敦金屬交易所 LME", "code": "MAL", "name": "鋁3M", "curr": "USD", "tick": 25, "im": 4800, "mm": 4800},
+  {"group": "倫敦金屬交易所 LME", "code": "MNI", "name": "鎳3M", "curr": "USD", "tick": 6, "im": 9708, "mm": 9708},
+  {"group": "倫敦金屬交易所 LME", "code": "MSN", "name": "錫3M", "curr": "USD", "tick": 5, "im": 33580, "mm": 33580},
+  {"group": "倫敦金屬交易所 LME", "code": "MZN", "name": "鋅3M", "curr": "USD", "tick": 25, "im": 7650, "mm": 7650},
+  {"group": "倫敦金屬交易所 LME", "code": "MPB", "name": "鉛3M", "curr": "USD", "tick": 25, "im": 2950, "mm": 2950},
+  {"group": "澳洲交易所 ASX", "code": "AP", "name": "澳洲指數", "curr": "AUD", "tick": 25, "im": 15743, "mm": 15743},
+  {"group": "澳洲交易所 ASX", "code": "YTS", "name": "澳洲十年債", "curr": "AUD", "tick": 9400, "im": 2542, "mm": 2542},
+  {"group": "澳洲交易所 ASX", "code": "YTU", "name": "澳洲三年債", "curr": "AUD", "tick": 3000, "im": 1059, "mm": 1059},
+  {"group": "澳洲交易所 ASX", "code": "YBA", "name": "90天票券", "curr": "AUD", "tick": 2400, "im": 1037, "mm": 1037},
+  {"group": "澳洲交易所 ASX", "code": "YIB", "name": "30天利率", "curr": "AUD", "tick": 2466, "im": 577, "mm": 577},
+  {"group": "CBOE 期貨交易所 CFE", "code": "VX", "name": "VIX指數", "curr": "USD", "tick": 1000, "im": 8184, "mm": 7440},
+  {"group": "CBOE 期貨交易所 CFE", "code": "VXM", "name": "小VIX指數", "curr": "USD", "tick": 100, "im": 853, "mm": 775},
+  {"group": "印度國際交易所 NIF", "code": "NIFTY", "name": "印度指數", "curr": "USD", "tick": 2, "im": 2442, "mm": 2220}
+]
+const liquidationRatio = 0.25  // 足額維持率低於 25% 代沖銷
+const ratioBarMax = 400  // 進度條滿格對應的維持率（%）
+
+// 收盤結算時間（CME 官方分類表；其他交易所尚未查證）
+const settleRules = [
+  { label: '股價指數', time: '15:00', tz: 'America/Chicago', codes: 'YM ES NQ NK BIO ESG M2K ME MES MNIK MNK MNQ MYM NY RE RTY XAE XAI XAP XAU XAV' },
+  { label: '公債', time: '14:00', tz: 'America/Chicago', codes: 'US TY FV TU UB UN' },
+  { label: '利率', time: '14:00', tz: 'America/Chicago', codes: 'ED SR1 SR3 10Y' },
+  { label: '聯邦基金', time: '14:00', tz: 'America/Chicago', codes: 'ZQ' },
+  { label: '外匯', time: '14:00', tz: 'America/Chicago', codes: 'AD BP CD SF EC ECM E7 JY RY UE NE MP BR M6A M6B MCD RA RU SIR' },
+  { label: '穀物油籽', time: '13:15', tz: 'America/Chicago', codes: 'S BO SM YK YC C O W RR YW MZC MZS' },
+  { label: '畜產', time: '13:00', tz: 'America/Chicago', codes: 'LC FC LH' },
+  { label: '黃金', time: '13:30', tz: 'America/New_York', codes: 'GC MGC QO' },
+  { label: '白銀', time: '13:25', tz: 'America/New_York', codes: 'SI QI SIL SIC' },
+  { label: '銅', time: '13:00', tz: 'America/New_York', codes: 'HG MHG' },
+  { label: '白金', time: '13:05', tz: 'America/New_York', codes: 'PL' },
+  { label: '鈀金', time: '13:00', tz: 'America/New_York', codes: 'PA' },
+  { label: '鋁', time: '16:30', tz: 'Europe/London', codes: 'ALI' },
+  { label: '能源', time: '14:30', tz: 'America/New_York', codes: 'CL QM HO NG QG RB BZ MCL MNG' }
+]
+const tzName = { 'America/Chicago': '美中', 'America/New_York': '美東', 'Europe/London': '倫敦' }
+const settleByCode = {}
+settleRules.forEach((r) => r.codes.split(' ').forEach((c) => { settleByCode[c] = r }))
+
+// 把某時區今天的當地時間換算成臺灣時間
+const toTaipeiTime = (hhmm, tz) => {
+  const [h, m] = hhmm.split(':').map(Number)
+  const now = new Date()
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now).map((x) => [x.type, x.value]))
+  // 先假設該時刻是 UTC，再用時區偏移修正
+  const guess = Date.UTC(+parts.year, +parts.month - 1, +parts.day, h, m)
+  const asTz = new Date(new Date(guess).toLocaleString('en-US', { timeZone: tz }))
+  const asUtc = new Date(new Date(guess).toLocaleString('en-US', { timeZone: 'UTC' }))
+  const instant = new Date(guess - (asTz - asUtc))
+  const tw = new Intl.DateTimeFormat('zh-TW', { timeZone: 'Asia/Taipei', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(instant)
+  const twDay = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).format(instant)
+  const localDay = `${parts.year}-${parts.month}-${parts.day}`
+  return twDay > localDay ? `隔天 ${tw}` : tw
+}
+
+// 取得商品的結算時間文字
+const settleText = (code) => {
+  const r = settleByCode[code]
+  if (!r) return null
+  return { local: `${tzName[r.tz]} ${r.time}`, taipei: toTaipeiTime(r.time, r.tz), label: r.label }
+}
+
+// 名詞白話解釋
+const glossary = {
+  price: '這個商品現在的成交價格，從看盤軟體抄下來即可。只用來算槓桿倍率，不影響平倉點數。',
+  leverage: '你用多少錢在操作多大的部位：合約價值 ÷ 帳戶權益數。例如 10 倍代表價格變動 1%，權益數大約變動 10%。',
+  lots: '你買或賣了幾份合約。口數越多，價格每跳一點賺賠的錢就越多。',
+  equity: '帳戶現在真正值多少錢：存進去的錢，加上手上部位還沒結清的賺賠。還沒下單時，就是帳戶餘額。',
+  currency: '這個商品用哪種貨幣算賺賠和保證金，例如美元或日圓。',
+  tick: '價格每變動 1 點，一口合約會賺或賠多少錢。例如微型那斯達克每點 2 美元。',
+  im: '開一口新倉位時，帳戶至少要有的錢，可以想成押金。',
+  mm: '持有倉位期間，帳戶至少要保留的錢。比原始保證金低一些。',
+  point: '價格的計算單位。指數期貨就是指數點數，黃金是每盎司美元，原油是每桶美元。',
+  liquidate: '期貨商替你強制平倉，也就是俗稱的斷頭。不需要你同意，通常用市價成交，實際虧損可能比試算更多。',
+  ratio: '帳戶權益數 ÷ 部位需要的維持保證金。元大規定國外期貨盤中低於 25% 就代沖銷。（官網沒寫公式，這是依用詞推定）',
+  line: '權益數掉到這個數字就會被代沖銷，等於維持保證金總額的 25%。',
+  loss: '從現在到被代沖銷之前，帳戶還能虧多少錢。',
+  margincall: '收盤結算後權益數低於維持保證金時，期貨商要求你補錢。下一個交易日收盤前 10 分鐘還沒補足，會被平倉到權益數回到原始保證金。',
+  newpos: '開一個新的倉位。權益數低於原始保證金時，不能再開新倉。'
+}
+let termSeq = 0
+
+// 點名詞：展開或收起解釋
+const toggleTerm = (btn) => {
+  const openId = btn.getAttribute('aria-controls')
+  const existing = openId ? document.getElementById(openId) : null
+  if (existing) {
+    existing.hidden = !existing.hidden
+    btn.setAttribute('aria-expanded', String(!existing.hidden))
+    return
+  }
+  const key = btn.dataset.term
+  const panel = document.createElement('div')
+  panel.className = 'sl-term-def'
+  panel.id = `def-${key}-${termSeq++}`
+  panel.innerHTML = `<b>${btn.textContent}</b>：${glossary[key] || '尚無解釋'}`
+  const anchor = btn.closest('[data-term-anchor]') || btn.parentElement
+  anchor.insertAdjacentElement('afterend', panel)
+  btn.setAttribute('aria-controls', panel.id)
+  btn.setAttribute('aria-expanded', 'true')
+}
+
+// 取得畫面元素
+const $ = (id) => document.getElementById(id)
+const el = {
+  product: $('product'), lots: $('lots'), equity: $('equity'), equityUnit: $('equityUnit'),
+  lotsErr: $('lotsErr'), equityErr: $('equityErr'),
+  productSuggest: $('productSuggest'), productHint: $('productHint'), price: $('price'), priceErr: $('priceErr'), levVal: $('levVal'), levFormula: $('levFormula'),
+  specSrc: $('specSrc'), specTick: $('specTick'), im: $('im'), mm: $('mm'), imErr: $('imErr'), mmErr: $('mmErr'), resetMargin: $('resetMargin'), 
+  formBody: $('formBody'), formLoading: $('formLoading'), formFail: $('formFail'),
+  outLoading: $('outLoading'), outEmpty: $('outEmpty'), outError: $('outError'), outErrorMsg: $('outErrorMsg'), outOk: $('outOk'),
+  callSettle: $('callSettle'), settleSection: $('settleSection'), settleSearch: $('settleSearch'), settleBody: $('settleBody'), settleCount: $('settleCount'), tableToggle: $('tableToggle'),
+  callPoints: $('callPoints'), callFormula: $('callFormula'), resPoints: $('resPoints'), resHeroSub: $('resHeroSub'), resBadge: $('resBadge'), resBadgeNote: $('resBadgeNote'),
+  resLoss: $('resLoss'), resLine: $('resLine'), resRatio: $('resRatio'), resTrack: $('resTrack'), resFill: $('resFill'), resFormula: $('resFormula')
+}
+
+// 數字格式化
+const fmt = (n, digits = 0) => n.toLocaleString('zh-TW', { minimumFractionDigits: digits, maximumFractionDigits: digits })
+const fmtMoney = (n, curr) => `${curr} ${fmt(n, 0)}`
+
+// 目前選定的商品代號（搜尋框解析後的結果）
+let selectedCode = ''
+const productLabel = (p) => `${p.code}｜${p.name}`
+
+const suggestMax = 6  // 候選清單最多顯示筆數
+let suggestIndex = -1  // 鍵盤上下鍵選到的位置
+
+// 找出候選商品：代號開頭相符優先，其次名稱包含
+const findCandidates = (text) => {
+  const up = text.trim().toUpperCase()
+  if (!up) return []
+  const byCode = products.filter((p) => p.code.toUpperCase().startsWith(up))
+  const byName = products.filter((p) => !byCode.includes(p) && p.name.toUpperCase().includes(up))
+  return [...byCode, ...byName].slice(0, suggestMax)
+}
+
+// 顯示或收起候選清單
+const renderSuggest = (items) => {
+  const show = items.length > 0
+  el.productSuggest.hidden = !show
+  el.product.setAttribute('aria-expanded', String(show))
+  suggestIndex = -1
+  el.productSuggest.innerHTML = items.map((p, i) =>
+    `<button type="button" class="sl-suggest-item" role="option" id="sg-${i}" data-code="${p.code}" aria-selected="false"><span class="sl-suggest-code">${p.code}</span><span>${p.name}</span><span class="sl-suggest-group">${p.group}</span></button>`
+  ).join('')
+}
+
+// 點選候選商品：填入、收起清單與鍵盤
+const pickProduct = (code) => {
+  const p = products.find((x) => x.code === code)
+  if (!p) return
+  el.product.value = productLabel(p)
+  renderSuggest([])
+  onProductInput()
+  el.product.blur()
+}
+
+// 鍵盤上下鍵移動選取
+const moveSuggest = (step) => {
+  const items = [...el.productSuggest.querySelectorAll('.sl-suggest-item')]
+  if (!items.length) return
+  suggestIndex = (suggestIndex + step + items.length) % items.length
+  items.forEach((it, i) => it.setAttribute('aria-selected', String(i === suggestIndex)))
+  el.product.setAttribute('aria-activedescendant', items[suggestIndex].id)
+}
+
+// 舊介面相容：清單改為輸入時才產生
+const buildProductOptions = () => {}
+
+// 解析搜尋框文字：代號（不分大小寫）→ 清單選項 → 唯一的名稱比對
+const resolveProduct = (text) => {
+  const t = text.trim()
+  if (!t) return { code: '', msg: '' }
+  const up = t.toUpperCase()
+  const byCode = products.find((p) => p.code.toUpperCase() === up || productLabel(p) === t || up.split('｜')[0] === p.code.toUpperCase())
+  if (byCode) return { code: byCode.code, msg: '' }
+  const byName = products.filter((p) => p.name.toUpperCase().includes(up) || p.code.toUpperCase().startsWith(up))
+  if (byName.length === 1) return { code: byName[0].code, msg: '' }
+  if (byName.length > 1) return { code: '', msg: `有 ${byName.length} 檔符合，請從清單選一個或輸入完整代號` }
+  return { code: '', msg: `找不到「${t}」，請確認代號` }
+}
+
+// 搜尋框變動時更新選定商品
+const onProductInput = () => {
+  const r = resolveProduct(el.product.value)
+  const changed = r.code !== selectedCode
+  selectedCode = r.code
+  const p = products.find((x) => x.code === selectedCode)
+  el.productHint.textContent = p ? `已選：${p.name}（${p.code}），${p.group}` : (r.msg || `共 ${products.length} 檔元大國外期貨商品`)
+  if (changed) fillMarginDefaults()
+  // 已精確選到商品就收起清單，否則顯示候選
+  const exact = p && (el.product.value.trim().toUpperCase() === p.code || el.product.value === productLabel(p))
+  renderSuggest(exact || document.activeElement !== el.product ? [] : findCandidates(el.product.value))
+  update()
+}
+
+// 讀取並驗證輸入
+const readInput = () => {
+  const product = products.find((p) => p.code === selectedCode) || null
+  const lotsRaw = el.lots.value.trim()
+  const equityRaw = el.equity.value.trim()
+  const lots = Number(lotsRaw)
+  const equity = Number(equityRaw)
+  const errors = {}
+  if (lotsRaw === '' || !Number.isInteger(lots) || lots < 1) errors.lots = '口數需為 1 以上的整數'
+  if (equityRaw === '' || !Number.isFinite(equity) || equity <= 0) errors.equity = '權益數需大於 0'
+  const im = Number(el.im.value)
+  const mm = Number(el.mm.value)
+  if (el.im.value.trim() === '' || !(im > 0)) errors.im = '原始保證金需大於 0'
+  if (el.mm.value.trim() === '' || !(mm > 0)) errors.mm = '維持保證金需大於 0'
+  else if (im > 0 && mm > im) errors.mm = '維持保證金通常不會高於原始保證金，請確認'
+  return { product: product ? { ...product, im, mm } : null, lots, equity, errors }
+}
+
+// 核心計算：損失多少點會被代沖銷
+const calcLiquidation = ({ product, lots, equity }) => {
+  const mmTotal = product.mm * lots
+  const imTotal = product.im * lots
+  const line = mmTotal * liquidationRatio  // 代沖銷門檻權益數
+  const lossAmount = equity - line  // 可承受虧損金額
+  const points = lossAmount / (product.tick * lots)  // 換算成點數
+  const ratio = (equity / mmTotal) * 100  // 目前足額維持率
+  const callAmount = equity - mmTotal  // 距離追繳還能虧的金額
+  const callPoints = callAmount / (product.tick * lots)  // 換算成點數
+  return { mmTotal, imTotal, line, lossAmount, points, ratio, callAmount, callPoints }
+}
+
+// 顯示欄位錯誤
+const showFieldError = (input, errEl, msg) => {
+  input.setAttribute('aria-invalid', msg ? 'true' : 'false')
+  errEl.textContent = msg || ''
+  errEl.hidden = !msg
+}
+
+// 切換結果區狀態
+const showOut = (state) => {
+  el.outLoading.hidden = state !== 'loading'
+  el.outEmpty.hidden = state !== 'empty'
+  el.outError.hidden = state !== 'error'
+  el.outOk.hidden = state !== 'ok'
+}
+
+// 檢查保證金是否與預設值不同（代表使用者自行填寫）
+const isMarginEdited = () => {
+  const base = products.find((p) => p.code === selectedCode)
+  return !!base && (Number(el.im.value) !== base.im || Number(el.mm.value) !== base.mm)
+}
+
+// 換商品或還原時，把預設保證金填回欄位
+const fillMarginDefaults = () => {
+  const base = products.find((p) => p.code === selectedCode)
+  el.im.value = base ? base.im : ''
+  el.mm.value = base ? base.mm : ''
+}
+
+// 更新規格列
+const renderSpec = (product) => {
+  el.specTick.textContent = product ? `${product.curr} ${product.tick.toLocaleString('zh-TW', { maximumFractionDigits: 4 })}` : '—'
+  document.querySelectorAll('.pg-curr').forEach((u) => { u.textContent = product ? product.curr : 'USD' })
+  el.im.disabled = !product
+  el.mm.disabled = !product
+  el.equityUnit.textContent = product ? product.curr : 'USD'
+  // 保證金來源：有出處就附連結，沒有就明確標示未查證
+  const edited = isMarginEdited()
+  el.resetMargin.hidden = !edited
+  if (!product) { el.specSrc.innerHTML = ''; return }
+  el.specSrc.innerHTML = edited
+    ? '<span class="sl-badge sl-badge-success">自行輸入</span><span>保證金依你填的數字計算</span>'
+    : `<span class="sl-badge sl-badge-success">元大公告</span><span>來源：<a href="${dataSource.url}" style="color: var(--amber-text);">${dataSource.label}</a>，${dataSource.date} 更新。保證金每日變動，下單前請再確認</span>`
+}
+
+// 依結果設定狀態標籤
+const renderBadge = (r) => {
+  // 狀態說明會重繪，先移除舊說明內已展開的解釋
+  el.resBadgeNote.querySelectorAll('.sl-term[aria-controls]').forEach((b) => {
+    const old = document.getElementById(b.getAttribute('aria-controls'))
+    if (old) old.remove()
+  })
+  if (r.points <= 0) {
+    el.resBadge.className = 'sl-badge sl-badge-danger'
+    el.resBadge.textContent = '已達代沖銷'
+    el.resBadgeNote.innerHTML = '權益數已低於<button class="sl-term" type="button" data-term="mm">維持保證金</button>的 25%'
+  } else if (r.ratio < 100) {
+    el.resBadge.className = 'sl-badge sl-badge-danger'
+    el.resBadge.textContent = '低於維持保證金'
+    el.resBadgeNote.innerHTML = '收盤後會被<button class="sl-term" type="button" data-term="margincall">追繳</button>'
+  } else if (r.ratio * r.mmTotal / 100 < r.imTotal) {
+    el.resBadge.className = 'sl-badge sl-badge-amber'
+    el.resBadge.textContent = '不足原始保證金'
+    el.resBadgeNote.innerHTML = '無法再<button class="sl-term" type="button" data-term="newpos">新建倉</button>'
+  } else {
+    el.resBadge.className = 'sl-badge sl-badge-success'
+    el.resBadge.textContent = '保證金充足'
+    el.resBadgeNote.innerHTML = ''
+  }
+}
+
+// 槓桿倍率：合約價值 ÷ 帳戶權益數
+const renderLeverage = (input) => {
+  const raw = el.price.value.trim()
+  const price = Number(raw)
+  const priceErr = raw !== '' && !(price > 0) ? '價格需大於 0' : ''
+  showFieldError(el.price, el.priceErr, priceErr)
+  const p = input.product
+  const ok = p && raw !== '' && !priceErr && !input.errors.lots && !input.errors.equity
+  if (!ok) {
+    el.levVal.textContent = '—'
+    el.levFormula.textContent = '填入目前價格後計算：（價格 × 每一大點價值 × 口數）÷ 帳戶權益數'
+    return
+  }
+  const contractValue = price * p.tick * input.lots  // 合約價值
+  const leverage = contractValue / input.equity
+  el.levVal.textContent = `${fmt(leverage, 2)} 倍`
+  el.levFormula.textContent = `合約價值 ${price.toLocaleString('zh-TW', { maximumFractionDigits: 4 })} × ${p.tick} × ${input.lots} ＝ ${p.curr} ${fmt(contractValue)}；${fmt(contractValue)} ÷ 權益數 ${fmt(input.equity)} ＝ ${fmt(leverage, 2)} 倍`
+}
+
+// 主流程：讀取 → 驗證 → 計算 → 顯示
+const update = () => {
+  const input = readInput()
+  renderSpec(input.product)
+  showFieldError(el.lots, el.lotsErr, input.errors.lots)
+  showFieldError(el.equity, el.equityErr, input.errors.equity)
+  showFieldError(el.im, el.imErr, input.errors.im)
+  showFieldError(el.mm, el.mmErr, input.errors.mm)
+  renderLeverage(input)
+  if (!input.product) return showOut('empty')
+  if (Object.keys(input.errors).length) {
+    el.outErrorMsg.textContent = Object.values(input.errors).join('；')
+    return showOut('error')
+  }
+  const r = calcLiquidation(input)
+  const p = input.product
+  const curr = p.curr
+  const pointDigits = p.tick >= 10000 ? 4 : p.tick >= 1000 ? 3 : p.tick >= 100 ? 2 : 1
+  el.resPoints.textContent = r.points <= 0 ? '0' : fmt(r.points, pointDigits)
+  el.resHeroSub.textContent = `${p.name} ${input.lots} 口，每點 ${curr} ${(p.tick * input.lots).toLocaleString('zh-TW', { maximumFractionDigits: 4 })}`
+  el.callPoints.textContent = r.callPoints <= 0 ? '0' : fmt(r.callPoints, pointDigits)
+  el.callFormula.textContent = r.callPoints <= 0
+    ? `權益數已低於維持保證金 ${fmt(r.mmTotal)}，收盤結算後會被追繳`
+    : `（${fmt(input.equity)} − ${fmt(p.mm)} × ${input.lots}）÷（${p.tick} × ${input.lots}）＝ ${fmt(r.callPoints, 2)} 點，以收盤結算價判定`
+  const st = settleText(p.code)
+  el.callSettle.textContent = st ? `結算時間：臺灣 ${st.taipei}（${st.local}，CME ${st.label}）` : '結算時間：此交易所尚未查證，可按「查看附表」確認'
+  el.resLoss.textContent = fmtMoney(Math.max(r.lossAmount, 0), curr)
+  el.resLine.textContent = fmtMoney(r.line, curr)
+  el.resRatio.textContent = `${fmt(r.ratio, 0)}%`
+  const barValue = Math.min(Math.max(r.ratio, 0), ratioBarMax)
+  el.resTrack.setAttribute('aria-valuenow', String(Math.round(barValue)))
+  el.resFill.style.width = `${(barValue / ratioBarMax) * 100}%`
+  el.resFormula.textContent = `（${fmt(input.equity)} − 25% × ${fmt(p.mm)} × ${input.lots}）÷（${p.tick} × ${input.lots}）＝ ${fmt(r.points, 2)} 點`
+  renderBadge(r)
+  showOut('ok')
+}
+
+// 附表：依搜尋文字篩選並列出結算時間
+const renderSettleTable = () => {
+  const q = el.settleSearch.value.trim().toUpperCase()
+  const rows = products.filter((p) => !q || p.code.toUpperCase().includes(q) || p.name.toUpperCase().includes(q) || p.group.toUpperCase().includes(q))
+  el.settleCount.textContent = q ? `符合 ${rows.length} 檔` : `共 ${rows.length} 檔，芝商所商品已查證，其他交易所尚未查證`
+  el.settleBody.innerHTML = rows.length
+    ? rows.map((p) => {
+        const st = settleText(p.code)
+        const local = st ? `${st.local}<span class="sl-table-sub">${st.label}</span>` : '<span class="sl-badge sl-badge-danger">未查證</span>'
+        return `<tr><td>${p.code}</td><td>${p.name}<span class="sl-table-sub">${p.group}</span></td><td>${local}</td><td>${st ? st.taipei : '—'}</td></tr>`
+      }).join('')
+    : '<tr><td colspan="4">找不到符合的商品，請換個代號或名稱</td></tr>'
+}
+
+// 開啟或收起附表
+const setTableOpen = (open) => {
+  el.settleSection.hidden = !open
+  el.tableToggle.setAttribute('aria-expanded', String(open))
+  el.tableToggle.textContent = open ? '收起附表' : '查看附表'
+  if (open) {
+    renderSettleTable()
+    el.settleSection.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  }
+}
+
+// 顯示資料日期與來源狀態
+const renderDataStatus = () => {
+  const badge = $('dataBadge')
+  const shortDate = dataSource.date.slice(5, 10).replace(/^0/, '').replace('/0', '/')
+  badge.className = dataSource.live ? 'sl-badge sl-badge-success' : 'sl-badge sl-badge-amber'
+  badge.textContent = dataSource.live ? `元大 ${shortDate} 公告` : `內建資料 ${shortDate}`
+  $('dataNote').textContent = dataSource.live
+    ? `保證金每天臺灣時間 06:00 自動更新，目前資料時間 ${dataSource.date}，可依當日數字自行修改。`
+    : `目前讀不到最新保證金，暫用內建的 ${dataSource.date} 資料，請照元大當日數字自行修改。`
+}
+
+// 讀取每日更新的保證金檔；失敗時沿用內建資料
+const loadMargins = async () => {
+  el.formBody.hidden = true
+  el.formFail.hidden = true
+  el.formLoading.hidden = false
+  showOut('loading')
+  try {
+    const res = await fetch(dataUrl, { cache: 'no-cache' })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const data = await res.json()
+    if (!Array.isArray(data.products) || data.products.length < 100) throw new Error('資料筆數異常')
+    products.splice(0, products.length, ...data.products)
+    dataSource.date = data.updated
+    dataSource.live = true
+  } catch (error) {
+    console.warn('[保證金] 讀取失敗，改用內建資料：', error.message)
+  }
+  el.formLoading.hidden = true
+  el.formBody.hidden = false
+  renderDataStatus()
+  if (!products.some((p) => p.code === selectedCode)) selectedCode = ''
+  fillMarginDefaults()
+  update()
+  if (!el.settleSection.hidden) renderSettleTable()
+}
+
+// 綁定事件
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.sl-term')
+  if (btn) toggleTerm(btn)
+})
+el.product.addEventListener('input', onProductInput)
+el.product.addEventListener('focus', () => {
+  // 手機鍵盤彈出後，把搜尋框捲到畫面上方，讓候選清單留在鍵盤上面
+  setTimeout(() => el.product.scrollIntoView({ block: 'start', behavior: 'smooth' }), 300)
+})
+el.product.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown') { e.preventDefault(); moveSuggest(1) }
+  if (e.key === 'ArrowUp') { e.preventDefault(); moveSuggest(-1) }
+  if (e.key === 'Enter' && suggestIndex >= 0) {
+    e.preventDefault()
+    pickProduct(el.productSuggest.querySelectorAll('.sl-suggest-item')[suggestIndex].dataset.code)
+  }
+  if (e.key === 'Escape') renderSuggest([])
+})
+// 用 pointerdown 搶在輸入框失焦前選取
+el.productSuggest.addEventListener('pointerdown', (e) => {
+  const item = e.target.closest('.sl-suggest-item')
+  if (item) { e.preventDefault(); pickProduct(item.dataset.code) }
+})
+el.productSuggest.addEventListener('click', (e) => {
+  const item = e.target.closest('.sl-suggest-item')
+  if (item) pickProduct(item.dataset.code)
+})
+el.product.addEventListener('blur', () => {
+  setTimeout(() => renderSuggest([]), 150)
+  // 離開搜尋框時，把文字統一成「代號｜名稱」
+  const p = products.find((x) => x.code === selectedCode)
+  if (p) el.product.value = productLabel(p)
+})
+el.price.addEventListener('input', update)
+el.tableToggle.addEventListener('click', () => setTableOpen(el.settleSection.hidden))
+$('tableClose').addEventListener('click', () => { setTableOpen(false); el.tableToggle.focus() })
+el.settleSearch.addEventListener('input', renderSettleTable)
+el.im.addEventListener('input', update)
+el.mm.addEventListener('input', update)
+el.resetMargin.addEventListener('click', () => { fillMarginDefaults(); update() })
+el.lots.addEventListener('input', update)
+el.equity.addEventListener('input', update)
+$('retryBtn').addEventListener('click', loadMargins)
+
+// 初始化：預設帶入一組範例部位
+document.querySelectorAll('.sl-term').forEach((b) => b.setAttribute('aria-expanded', 'false'))
+buildProductOptions()
+selectedCode = 'MGC'
+el.product.value = 'MGC｜微黃金'
+el.productHint.textContent = '已選：微黃金（MGC），芝商所 CME'
+fillMarginDefaults()
+loadMargins()
+
+// 註冊離線快取，讓手機桌面捷徑沒網路也能開
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch((error) => console.warn('[離線快取] 註冊失敗：', error.message))
+  })
+}
+</script>
+</body>
+</html>
