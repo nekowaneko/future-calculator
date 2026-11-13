@@ -1,0 +1,16 @@
+{
+ "section": "yahoo1h",
+ "fetched_at": "2026-11-13T11:31:15.955710+00:00",
+ "items": [
+  {
+   "src": "yahoo1h",
+   "sym": "DX-Y.NYB",
+   "rows": 14302
+  },
+  {
+   "src": "yahoo1h",
+   "sym": "^TNX",
+   "rows": 4177
+  }
+ ]
+}

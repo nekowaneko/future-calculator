@@ -1,0 +1,48 @@
+{
+ "section": "gpr",
+ "fetched_at": "2026-11-13T11:31:21.086375+00:00",
+ "items": [
+  {
+   "src": "gpr",
+   "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_daily_recent.xls",
+   "rows": 15281,
+   "cols": [
+    "DAY",
+    "N10D",
+    "GPRD",
+    "GPRD_ACT",
+    "GPRD_THREAT",
+    "date",
+    "GPRD_MA30",
+    "GPRD_MA7",
+    "event",
+    "var_name",
+    "var_label"
+   ]
+  },
+  {
+   "src": "gpr",
+   "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_daily_recent.xlsx",
+   "error": "404 Client Error: Not Found for url: https://www.matteoiacoviello.com/gpr_files/data_gpr_daily_recent.xlsx"
+  },
+  {
+   "src": "gpr",
+   "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
+   "rows": 1522,
+   "cols": [
+    "month",
+    "GPR",
+    "GPRT",
+    "GPRA",
+    "GPRH",
+    "GPRHT",
+    "GPRHA",
+    "SHARE_GPR",
+    "N10",
+    "SHARE_GPRH",
+    "N3H",
+    "GPRH_NOEW"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "section": "calendar",
+ "fetched_at": "2026-11-13T11:31:19.451203+00:00",
+ "items": [
+  {
+   "src": "calendar",
+   "fn": "fomc_calendar.html",
+   "status": 200,
+   "bytes": 166065
+  },
+  {
+   "src": "calendar",
+   "fn": "bls_sched_2024.html",
+   "status": 403,
+   "bytes": 1321
+  },
+  {
+   "src": "calendar",
+   "fn": "bls_sched_2025.html",
+   "status": 403,
+   "bytes": 1321
+  },
+  {
+   "src": "calendar",
+   "fn": "bls_sched_2026.html",
+   "status": 403,
+   "bytes": 1321
+  },
+  {
+   "src": "calendar",
+   "fn": "bls_empsit_sched.html",
+   "status": 403,
+   "bytes": 1321
+  },
+  {
+   "src": "calendar",
+   "fn": "bls_cpi_sched.html",
+   "status": 403,
+   "bytes": 1321
+  },
+  {
+   "src": "calendar",
+   "fn": "bls_ppi_sched.html",
+   "status": 403,
+   "bytes": 1321
+  },
+  {
+   "src": "calendar",
+   "fn": "bls_ics.ics",
+   "status": 403,
+   "bytes": 1321
+  },
+  {
+   "src": "calendar",
+   "fn": "bea_schedule.html",
+   "status": 200,
+   "bytes": 126920
+  },
+  {
+   "src": "calendar",
+   "fn": "bea_schedule2.html",
+   "status": 200,
+   "bytes": 69214
+  },
+  {
+   "src": "calendar",
+   "fn": "census_retail.html",
+   "status": 200,
+   "bytes": 744484
+  },
+  {
+   "src": "calendar",
+   "fn": "census_sched.html",
+   "status": 200,
+   "bytes": 84923
+  }
+ ]
+}
