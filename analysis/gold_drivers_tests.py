@@ -381,6 +381,8 @@ meta = {
         'gpr': 'Caldara & Iacoviello daily GPR index (matteoiacoviello.com data_gpr_daily_recent.xls)',
         'cot': 'CFTC Public Reporting, Disaggregated Futures Only, gold 088691',
         'calendar': 'drivers/release_calendar.csv（Fed FOMC 行事曆、BEA 公布時程、FRED 發布日曆等，見 source 欄）'},
+    'n_tests': {'primary_family_corrected': int(len(family)), 'all_including_robustness_approx': int(n_all)},
+    'notes': '事件檢定以 GC=F 1h 08:00-09:00 ET（FOMC 14:00-15:00 ET）高低幅度為主要指標；MGC=F、絕對報酬、2 小時窗口、5 分鐘為穩健性。台灣時間 = ET+13（美國冬令）／ET+12（美國夏令）。p_adj = BH 校正後 p（只有主要家族才有）。',
     'n_tests_primary_family': int(len(family)),
     'n_tests_all_including_robustness': int(n_all),
     'multiple_testing': 'Benjamini-Hochberg FDR and Bonferroni applied to primary family (GC_F 1h range event tests, univariate daily regressions, lead-lag tests, COT)',

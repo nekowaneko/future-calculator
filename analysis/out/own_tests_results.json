@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-13T11:44:44.525226+00:00",
+  "generated": "2026-11-13T11:46:21.487078+00:00",
   "periods": {
    "target": "2024-11-13 ~ 2026-11-13",
    "daily_regression": "2024-11-13 ~ 2026-11-13",
@@ -15,6 +15,11 @@
    "cot": "CFTC Public Reporting, Disaggregated Futures Only, gold 088691",
    "calendar": "drivers/release_calendar.csv（Fed FOMC 行事曆、BEA 公布時程、FRED 發布日曆等，見 source 欄）"
   },
+  "n_tests": {
+   "primary_family_corrected": 33,
+   "all_including_robustness_approx": 266
+  },
+  "notes": "事件檢定以 GC=F 1h 08:00-09:00 ET（FOMC 14:00-15:00 ET）高低幅度為主要指標；MGC=F、絕對報酬、2 小時窗口、5 分鐘為穩健性。台灣時間 = ET+13（美國冬令）／ET+12（美國夏令）。p_adj = BH 校正後 p（只有主要家族才有）。",
   "n_tests_primary_family": 33,
   "n_tests_all_including_robustness": 266,
   "multiple_testing": "Benjamini-Hochberg FDR and Bonferroni applied to primary family (GC_F 1h range event tests, univariate daily regressions, lead-lag tests, COT)",
