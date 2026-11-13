@@ -9,6 +9,7 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,7 +17,10 @@ jobs:
       - name: 安裝套件
         run: pip install --quiet yfinance pandas requests xlrd openpyxl
       - name: 抓取驅動因素
-        run: python3 scripts/fetch_drivers.py
+        run: |
+          for sec in yahoo yahoo1h cot calendar gpr alfred fred; do
+            timeout 240 python3 -u scripts/fetch_drivers.py $sec || echo "section $sec failed or timed out"
+          done
       - name: 提交資料
         run: |
           git config user.name "github-actions[bot]"
