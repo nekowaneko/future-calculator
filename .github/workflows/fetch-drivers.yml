@@ -1,0 +1,27 @@
+name: 抓黃金驅動因素資料
+on:
+  workflow_dispatch:
+  push:
+    branches: [data-history]
+    paths: ['drivers/request.txt']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data-history
+      - name: 安裝套件
+        run: pip install --quiet yfinance pandas requests xlrd openpyxl
+      - name: 抓取驅動因素
+        run: python3 scripts/fetch_drivers.py
+      - name: 提交資料
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add drivers/
+          git diff --cached --quiet || git commit -m "抓黃金驅動因素資料 $(TZ=Asia/Taipei date '+%Y/%m/%d %H:%M')"
+          git pull --rebase -q origin data-history || true
+          git push origin HEAD:data-history
