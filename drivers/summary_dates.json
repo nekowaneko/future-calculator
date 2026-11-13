@@ -1,0 +1,216 @@
+{
+ "section": "dates",
+ "fetched_at": "2026-11-13T11:41:13.909183+00:00",
+ "items": [
+  {
+   "src": "fredcal",
+   "name": "empsit",
+   "y": 2024,
+   "status": 200,
+   "bytes": 72619
+  },
+  {
+   "src": "fredcal",
+   "name": "empsit",
+   "y": 2025,
+   "status": 200,
+   "bytes": 72538
+  },
+  {
+   "src": "fredcal",
+   "name": "empsit",
+   "y": 2026,
+   "status": 200,
+   "bytes": 72920
+  },
+  {
+   "src": "fredcal",
+   "name": "cpi",
+   "y": 2024,
+   "status": 200,
+   "bytes": 72634
+  },
+  {
+   "src": "fredcal",
+   "name": "cpi",
+   "y": 2025,
+   "status": 200,
+   "bytes": 72553
+  },
+  {
+   "src": "fredcal",
+   "name": "cpi",
+   "y": 2026,
+   "status": 200,
+   "bytes": 72933
+  },
+  {
+   "src": "fredcal",
+   "name": "ppi",
+   "y": 2024,
+   "status": 200,
+   "bytes": 72094
+  },
+  {
+   "src": "fredcal",
+   "name": "ppi",
+   "y": 2025,
+   "status": 200,
+   "bytes": 72013
+  },
+  {
+   "src": "fredcal",
+   "name": "ppi",
+   "y": 2026,
+   "status": 200,
+   "bytes": 73319
+  },
+  {
+   "src": "fredcal",
+   "name": "pio",
+   "y": 2024,
+   "status": 200,
+   "bytes": 72711
+  },
+  {
+   "src": "fredcal",
+   "name": "pio",
+   "y": 2025,
+   "status": 200,
+   "bytes": 72630
+  },
+  {
+   "src": "fredcal",
+   "name": "pio",
+   "y": 2026,
+   "status": 200,
+   "bytes": 73427
+  },
+  {
+   "src": "fredcal",
+   "name": "gdp",
+   "y": 2024,
+   "status": 200,
+   "bytes": 72121
+  },
+  {
+   "src": "fredcal",
+   "name": "gdp",
+   "y": 2025,
+   "status": 200,
+   "bytes": 72040
+  },
+  {
+   "src": "fredcal",
+   "name": "gdp",
+   "y": 2026,
+   "status": 200,
+   "bytes": 73351
+  },
+  {
+   "src": "fredcal",
+   "name": "retail",
+   "y": 2024,
+   "status": 200,
+   "bytes": 73567
+  },
+  {
+   "src": "fredcal",
+   "name": "retail",
+   "y": 2025,
+   "status": 200,
+   "bytes": 73486
+  },
+  {
+   "src": "fredcal",
+   "name": "retail",
+   "y": 2026,
+   "status": 200,
+   "bytes": 74321
+  },
+  {
+   "src": "fredcal",
+   "name": "claims",
+   "y": 2024,
+   "status": 200,
+   "bytes": 92621
+  },
+  {
+   "src": "fredcal",
+   "name": "claims",
+   "y": 2025,
+   "status": 200,
+   "bytes": 92540
+  },
+  {
+   "src": "fredcal",
+   "name": "claims",
+   "y": 2026,
+   "status": 200,
+   "bytes": 94416
+  },
+  {
+   "src": "fredcal",
+   "name": "fomc",
+   "y": 2024,
+   "status": 200,
+   "bytes": 91281
+  },
+  {
+   "src": "fredcal",
+   "name": "fomc",
+   "y": 2025,
+   "status": 200,
+   "bytes": 91200
+  },
+  {
+   "src": "fredcal",
+   "name": "fomc",
+   "y": 2026,
+   "status": 200,
+   "bytes": 91199
+  },
+  {
+   "src": "wayback",
+   "name": "bls_arch_empsit",
+   "stamp": "2026",
+   "status": 429,
+   "bytes": 620
+  },
+  {
+   "src": "wayback",
+   "name": "bls_arch_cpi",
+   "stamp": "2026",
+   "status": 429,
+   "bytes": 620
+  },
+  {
+   "src": "wayback",
+   "name": "bls_arch_ppi",
+   "stamp": "2026",
+   "status": 429,
+   "bytes": 620
+  },
+  {
+   "src": "wayback",
+   "name": "census_marts_sched",
+   "stamp": "2026",
+   "status": 429,
+   "bytes": 620
+  },
+  {
+   "src": "wayback",
+   "name": "bea_sched_2025",
+   "stamp": "20251231",
+   "status": 429,
+   "bytes": 620
+  },
+  {
+   "src": "wayback",
+   "name": "bea_sched_2025",
+   "stamp": "20250115",
+   "status": 429,
+   "bytes": 620
+  }
+ ]
+}
