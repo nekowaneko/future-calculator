@@ -1,0 +1,283 @@
+date,release,time_et,source,fred_release_name
+2024-11-07,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2024-11-13,CPI,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-11-14,Jobless_claims,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-11-14,PPI,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-11-15,Retail_sales,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-11-21,Jobless_claims,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-11-27,GDP,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-11-27,Jobless_claims,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-11-27,PCE,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-05,Jobless_claims,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-06,NFP,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-11,CPI,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-12,Jobless_claims,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-12,PPI,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-17,Retail_sales,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-18,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2024-12-19,GDP,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-19,Jobless_claims,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-20,PCE,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2024-12-26,Jobless_claims,08:30,analyst recall of standard 2024 BLS/BEA/Census/DOL schedule (FRED 2024 calendar page not retrievable) - lower confidence,
+2025-01-02,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-01-08,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-01-10,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-01-14,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-01-15,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-01-16,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-01-16,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-01-23,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-01-29,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2025-01-30,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-01-30,GDP_advance,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET; advance/initial estimate identified from BEA schedule titles & BEA Q3-2025 initial release",Gross Domestic Product
+2025-01-30,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-01-31,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-02-06,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-02-07,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-02-12,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-02-13,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-02-13,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-02-14,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-02-20,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-02-27,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-02-27,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-02-28,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-03-06,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-03-07,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-03-12,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-03-13,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-03-13,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-03-17,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-03-19,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2025-03-20,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-03-27,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-03-27,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-03-28,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-04-03,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-04-04,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-04-10,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-04-10,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-04-11,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-04-16,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-04-17,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-04-24,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-04-25,Retail_sales,10:00,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-04-30,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-04-30,GDP_advance,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET; advance/initial estimate identified from BEA schedule titles & BEA Q3-2025 initial release",Gross Domestic Product
+2025-04-30,PCE,10:00,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-05-01,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-05-02,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-05-07,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2025-05-08,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-05-13,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-05-15,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-05-15,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-05-15,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-05-22,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-05-29,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-05-29,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-05-30,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-06-05,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-06-06,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-06-11,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-06-12,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-06-12,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-06-17,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-06-18,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2025-06-18,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-06-26,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-06-26,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-06-27,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-07-03,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-07-03,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-07-10,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-07-15,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-07-16,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-07-17,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-07-17,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-07-24,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-07-30,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2025-07-30,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-07-30,GDP_advance,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET; advance/initial estimate identified from BEA schedule titles & BEA Q3-2025 initial release",Gross Domestic Product
+2025-07-31,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-07-31,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-08-01,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-08-07,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-08-12,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-08-14,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-08-14,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-08-15,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-08-21,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-08-28,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-08-28,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-08-29,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-09-04,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-09-05,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-09-10,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-09-11,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-09-11,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-09-16,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-09-17,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2025-09-18,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-09-25,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-09-25,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-09-26,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-10-24,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-10-29,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2025-11-20,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-11-20,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-11-25,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2025-11-25,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-11-26,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-12-04,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-12-05,PCE,10:00,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-12-10,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2025-12-11,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-12-16,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2025-12-16,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2025-12-18,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2025-12-18,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-12-23,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2025-12-23,GDP_advance,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET; advance/initial estimate identified from BEA schedule titles & BEA Q3-2025 initial release",Gross Domestic Product
+2025-12-23,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2025-12-24,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2025-12-31,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-01-08,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-01-09,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-01-13,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-01-14,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-01-14,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-01-15,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-01-22,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-01-22,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-01-22,PCE,10:00,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-01-28,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2026-01-29,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-01-30,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-02-05,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-02-10,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-02-11,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-02-12,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-02-13,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-02-19,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-02-20,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-02-20,GDP_advance,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET; advance/initial estimate identified from BEA schedule titles & BEA Q3-2025 initial release",Gross Domestic Product
+2026-02-20,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-02-26,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-02-27,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-03-05,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-03-06,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-03-06,Retail_sales,07:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-03-11,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-03-12,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-03-13,GDP,09:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-03-13,PCE,11:00,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-03-18,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2026-03-18,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-03-19,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-03-26,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-04-01,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-04-02,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-04-03,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-04-09,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-04-09,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-04-09,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-04-10,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-04-14,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-04-16,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-04-21,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-04-23,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-04-29,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2026-04-30,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-04-30,GDP_advance,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET; advance/initial estimate identified from BEA schedule titles & BEA Q3-2025 initial release",Gross Domestic Product
+2026-04-30,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-04-30,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-05-07,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-05-08,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-05-12,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-05-13,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-05-14,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-05-14,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-05-21,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-05-28,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-05-28,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-05-28,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-06-04,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-06-05,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-06-10,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-06-11,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-06-11,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-06-17,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2026-06-17,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-06-18,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-06-25,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-06-25,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-06-25,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-07-02,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-07-02,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-07-09,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-07-14,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-07-15,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-07-16,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-07-16,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-07-23,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-07-29,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2026-07-30,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-07-30,GDP_advance,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET; advance/initial estimate identified from BEA schedule titles & BEA Q3-2025 initial release",Gross Domestic Product
+2026-07-30,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-07-30,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-08-06,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-08-07,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-08-12,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-08-13,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-08-13,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-08-14,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-08-20,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-08-26,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-08-26,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-08-27,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-09-03,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-09-04,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-09-10,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-09-10,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-09-11,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-09-16,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2026-09-16,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-09-17,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-09-24,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-09-28,Retail_sales,10:00,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-09-30,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-09-30,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-10-01,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-10-02,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-10-08,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-10-14,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-10-15,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-10-15,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-10-15,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-10-22,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-10-28,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2026-10-29,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-10-29,GDP_advance,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET; advance/initial estimate identified from BEA schedule titles & BEA Q3-2025 initial release",Gross Domestic Product
+2026-10-29,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-10-29,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-11-05,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-11-06,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-11-10,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-11-12,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-11-13,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-11-17,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-11-19,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-11-25,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-11-25,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-11-25,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
+2026-12-03,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-12-04,NFP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Employment Situation
+2026-12-09,FOMC,14:00,federalreserve.gov/monetarypolicy/fomccalendars.htm (statement day = 2nd day of meeting),FOMC statement
+2026-12-10,CPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Consumer Price Index
+2026-12-10,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-12-15,PPI,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Producer Price Index
+2026-12-16,Retail_sales,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Advance Monthly Sales for Retail and Food Services
+2026-12-17,Jobless_claims,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Unemployment Insurance Weekly Claims Report
+2026-12-23,GDP,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Gross Domestic Product
+2026-12-23,PCE,08:30,"FRED release calendar (fred.stlouisfed.org/releases/calendar), times converted CT->ET",Personal Income and Outlays
