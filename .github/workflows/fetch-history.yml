@@ -1,0 +1,24 @@
+name: 抓 MGC 歷史價格
+on:
+  workflow_dispatch:
+  push:
+    branches: [data-history]
+    paths: ['history/request.txt']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 安裝套件
+        run: pip install --quiet yfinance pandas
+      - name: 抓取歷史 K 線
+        run: python3 scripts/fetch_history.py
+      - name: 提交資料
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add history/
+          git diff --cached --quiet || git commit -m "抓 MGC 歷史價格 $(TZ=Asia/Taipei date '+%Y/%m/%d %H:%M')"
+          git push
