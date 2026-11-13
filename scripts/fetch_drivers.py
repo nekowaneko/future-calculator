@@ -141,5 +141,37 @@ if on('alfred'):
                 note(src='alfred', sid=sid, error=str(e))
             time.sleep(1)
 
+#7. 公布日期第二來源：FRED 發布日曆頁 + Wayback 存檔的 BLS 歷史新聞稿清單
+if on('dates'):
+    CURL = {'User-Agent': 'curl/8.5.0'}
+    rids = {'empsit': 50, 'cpi': 10, 'ppi': 46, 'pio': 54, 'gdp': 53, 'retail': 9, 'claims': 180, 'fomc': 101}
+    for name, rid in rids.items():
+        for y in (2024, 2025, 2026):
+            u = f'https://fred.stlouisfed.org/releases/calendar?rid={rid}&y={y}'
+            try:
+                r = requests.get(u, headers=CURL, timeout=(15, 40))
+                open(f'{RAW}/fredcal_{name}_{y}.html', 'wb').write(r.content)
+                note(src='fredcal', name=name, y=y, status=r.status_code, bytes=len(r.content))
+            except Exception as e:
+                note(src='fredcal', name=name, y=y, error=str(e))
+    wb = {'bls_arch_empsit': 'https://www.bls.gov/bls/news-release/empsit.htm',
+          'bls_arch_cpi': 'https://www.bls.gov/bls/news-release/cpi.htm',
+          'bls_arch_ppi': 'https://www.bls.gov/bls/news-release/ppi.htm',
+          'census_marts_sched': 'https://www.census.gov/retail/release_schedule.html',
+          'bea_sched_2025': 'https://www.bea.gov/news/schedule/full'}
+    for name, url in wb.items():
+        for stamp in ('2026', '20251231', '20250115'):
+            if name != 'bea_sched_2025' and stamp != '2026':
+                continue
+            if name == 'bea_sched_2025' and stamp == '2026':
+                continue
+            u = f'https://web.archive.org/web/{stamp}id_/{url}'
+            try:
+                r = requests.get(u, headers=UA, timeout=(20, 60))
+                open(f'{RAW}/wb_{name}_{stamp}.html', 'wb').write(r.content)
+                note(src='wayback', name=name, stamp=stamp, status=r.status_code, bytes=len(r.content))
+            except Exception as e:
+                note(src='wayback', name=name, stamp=stamp, error=str(e))
+
 json.dump({'section': SEC, 'fetched_at': datetime.now(timezone.utc).isoformat(), 'items': summary},
           open(f'{OUT}/summary_{SEC}.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

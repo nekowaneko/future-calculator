@@ -18,8 +18,8 @@ jobs:
         run: pip install --quiet yfinance pandas requests xlrd openpyxl
       - name: 抓取驅動因素
         run: |
-          for sec in yahoo yahoo1h cot calendar gpr alfred fred; do
-            timeout 240 python3 -u scripts/fetch_drivers.py $sec || echo "section $sec failed or timed out"
+          for sec in $(cat drivers/sections.txt 2>/dev/null || echo yahoo yahoo1h cot calendar gpr fred dates); do
+            timeout 420 python3 -u scripts/fetch_drivers.py $sec || echo "section $sec failed or timed out"
           done
       - name: 提交資料
         run: |
